@@ -1,0 +1,1547 @@
+NODEMANAGER00010	-	Invalid ''{0}'' directory ''{1}''.
+One of the configured root directories is invalid. Check that the directory exists and that the permissions are set correctly.
+
+NODEMANAGER00011	-	Invalid Node Manager status directory.
+Node Manager status directory is invalid. Check that the directory exists and that the permissions are set correctly.
+
+NODEMANAGER00020	-	Unable to initialise port server.
+Port server could not be initialised. Port server is required to start Node Manager. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00021	-	Standard crash recovery procedure failed, unable to load process stream configurations.
+Node Manager loads all process streams that were running before Node Manager was shut down. The process stream configurations contained an unexpected error. Contact vendor to fix the problem.
+
+NODEMANAGER00022	-	Standard crash recovery procedure failed, unable to start all process streams.
+Node Manager loads all process streams that were running before Node Manager was shut down. Node Manager is unable to start without full control over all process streams. Contact vendor to fix the problem.
+
+NODEMANAGER00023	-	Unable to load Node Manager configuration, configuration for host ''{0}'' does not exist.
+Node Manager was unable to load its configuration and cannot be started. Check that the host name is correctly configured in Node Manager configuration file.
+
+NODEMANAGER00024	-	Unable to load Node Manager configuration from the database.
+Node Manager was unable to load its configuration and cannot be started. Check that the database connection is working properly.
+
+NODEMANAGER00025	-	Unable to execute the order, process stream does not exist.
+Process stream does not exist. This may happen, if someone hides or deletes a process stream at the same time when someone else deletes it. Retry giving the order.
+
+NODEMANAGER00026	-	Unable to start a new version of process stream. Unable to stop process stream controller of the previous version of process stream.
+The old process stream version must be removed so that a new process stream version can be started. The old process stream version cannot be removed before all nodes have stopped stopped and if there are orders pending for the process stream. Retry giving the order.
+
+NODEMANAGER00027	-	Unable to perform process stream reconfiguration. New process stream version is the same as the old one.
+Process stream reconfiguration cannot (and is not needed) to be run for the same process stream version. This may occur if two users give a reconfiguration order at the same time. Retry giving the order, if needed.
+
+NODEMANAGER00028	-	Unable to initialise process stream controller.
+Process stream controller is needed for monitoring the process stream. If initialisation fails, the process stream cannot be started or reconfigured. Check the database connection and retry giving the order.
+
+NODEMANAGER00029	-	Invalid offline order: {0}
+The order contained errors and Node Manager was unable to execute it. Retry giving the order and contact the vendor if the error reoccurs.
+
+NODEMANAGER00030	-	Storing data offline failed.
+Node Manager was unable to store data offline. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00031	-	Node Manager reconfiguration failed. Unable to find configuration for this host.
+Node Manager configuration for this host was missing. Check that the host and its parameters are properly configured in UI.
+
+NODEMANAGER00032	-	Node Manager reconfiguration failed. Unable to load Node Manager configuration from the database.
+Node Manager was unable to load its configuration from the database. Check the database connection and that the host and its parameters are properly configured in UI.
+
+NODEMANAGER00033	-	Node Manager reconfiguration failed. Unable to execute port server reconfiguration.
+Node Manager was unable to reconfigure its port server. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00034	-	Node Manager reconfiguration failed. Unable to execute process stream changes.
+Reconfiguration failed because Node Manager was unable to execute the changes in process streams. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00035	-	Hiding process stream failed. Unable to stop process stream controller.
+Node Manager was unable to stop the process stream controller. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00036	-	Invalid node status directory.
+Node status directory is invalid. Check that the directory exists and that the permissions are set correctly.
+
+NODEMANAGER00037	-	Invalid order type ''{0}''.
+An invalid order was found. If messages of this type start appearing frequently, contact the vendor.
+
+NODEMANAGER00038	-	Node Manager reconfiguration failed. Unable to re-initialise all components of Node Manager.
+Node Manager was unable to reconfigure its subcomponents properly. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00039	-	Invalid offline order, process stream ID missing.
+The order contained errors and Node Manager was unable to execute it. Retry giving the order and contact the vendor if the error reoccurs.
+
+NODEMANAGER00040	-	Invalid delete stream order, process stream ''{0}'' is monitored.
+Node Manager was unable to delete process stream because it was monitored. Make sure that the process stream is not monitored and retry giving the order.
+
+NODEMANAGER00041	-	Unable to start process stream ''{0}'' version ''{1}''. Version ''{2}'' is still active.
+Node Manager was unable to start a process stream because another version of it was still active. Make sure that the process stream is running the same version on all hosts and retry giving the order.
+
+NODEMANAGER00042	-	Unable to execute order, streamID ({0}) does not match with streamVersionID ({1}).
+Node Manager was unable to execute order because the given streamVersionID did not match with the streamID.
+
+NODEMANAGER00043	-	Unable to get streamID ''{0}''.
+Node Manager was unable to find the streamID from the system database.
+
+NODEMANAGER00044    -   Unable to delete stream, unable to load stream details from the database.
+Node Manager was unable to load stream details from the database. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER00045    -   Unable to load incomplete orders.
+Node Manager was unable to load the incomplete orders from the database. Check the more detailed error messages to fix the problem and check that the database is working properly.
+
+NODEMANAGER00046    -   Unable to load the status of an incomplete order.
+Node Manager was unable to load the status of an incomplete order from the database. Check the more detailed error messages to fix the problem and check that the database is working properly.
+
+
+
+
+
+
+NODEMANAGER01001	-	Process stream configuration was not found.
+Node Manager was unable to create a process stream controller because the process stream configuration was missing. Check that the process stream is not deleted and retry giving the order.
+
+NODEMANAGER01002	-	A database error occurred while loading process stream configuration.
+Node Manager was unable to load process stream configuration from the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01003	-	A database error occurred while saving process stream configuration.
+Node Manager was unable to save process stream configuration into the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01004	-	Conflict in directory initialisation.
+A process stream configuration contained errors. Node Manager was unable to initialise a directory between two nodes. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01005	-	Invalid process stream configuration in Node Manager''s internal tables: {0}
+Node Manager's internal tables contained errors. Contact vendor to fix the problem.
+
+NODEMANAGER01006	-	Unable to start process stream. Errors in process stream configuration.
+Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01007	-	A database error occurred while loading process stream nodes.
+Node Manager was unable to load process stream nodes from the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01008	-	A database error occurred while loading transport node IDs.
+Node Manager was unable to load IDs for transport nodes from the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01010	-	Unable to start a node because a database error occurred while trying to change node status.
+The status of the node must be changed before the node can be started. Check the database connection and retry giving the order.
+
+NODEMANAGER01012	-	Starting node ''{0}'' failed.
+Node Manager was unable to start the node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01013	-	A database error occurred while trying to start order.
+Node Manager was unable to save new order status and start times into the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01014	-	A database error occurred while trying to finish order.
+Node Manager was unable to save new order status and start times into the database. Check the database connection and retry giving the order.
+
+NODEMANAGER01015	-	Other hosts were unable to process the process stream configuration in time, host ''{0}'' missing.
+Node Managers synchronise their configurations when a process stream is started. One of the hosts did not write the configuration into the database in time. Check the status of the host mentioned in the error message.
+
+NODEMANAGER01016	-	Unable to find transport node for link ''{0}'' (copy {1}, writing node ID {2}) in host ''{3}''.
+One of the hosts in the distributed process stream did not configure transport nodes correctly. Check the host status and retry giving the order if the host is running properly.
+
+NODEMANAGER01017	-	A database error occurred while trying to load remote transport node IDs.
+Node Manager was unable to load transport node IDs from other hosts. Check the database connection and retry giving the order.
+
+NODEMANAGER01019	-	Stopping a node ''{0}'' failed. Unable to give stop order to node.
+Node Manager was unable to write a stop order for the node. Check the more detailed error messages to fix the problem or retry giving the order.
+
+NODEMANAGER01020	-	Node ''{0}'' failed while trying to stop it.
+The node that Node Manager was trying to stop failed before shutting down properly.
+
+NODEMANAGER01021	-	Unable to stop node ''{0}'' because a database error occurred while trying to change node status.
+Node Manager was unable to change node status to stopped. Check the database connection and retry giving the order if needed.
+
+NODEMANAGER01022	-	Unable to flush directory ''{0}''.
+Node Manager was unable to flush the directory. Check the more detailed error messages for further information.
+
+NODEMANAGER01023	-	Running nodes are writing to directory. Unable to flush directory.
+Node Manager was unable to flush the directory because some nodes were writing to it. All nodes writing to the directory should be stopped before flushing it. Retry giving the order.
+
+NODEMANAGER01025	-	Unable to flush directory ''{0}''. Processing node ''{1}'', which is processing the data in directory, has failed.
+The node that should process the data in the directory has failed. Node Manager is unable to flush the directory if the nodes processing the data fail. Retry giving the order.
+
+NODEMANAGER01026	-	Order execution on host ''{0}'' failed before stopping sender node ''{1}''. Unable to continue flushing data in this host.
+Node Manager in the previous host of the process stream was unable to stop the process stream properly. Node Manager in this host is unable to proceed before the previous host has finished its tasks successfully. Retry giving the order.
+
+NODEMANAGER01027	-	Invalid abort order. Order ID has an invalid value ''{0}'': {1}
+Node Manager was unable to abort the order because the ID of the order was invalid. Retry aborting the order.
+
+NODEMANAGER01028	-	Invalid abort order. Order ID is missing.
+Node Manager was unable to abort the order because the ID of the order is missing. Retry aborting the order.
+
+NODEMANAGER01029	-	Changing process stream and node attributes failed.
+Node Manager was unable to change process stream and node attributes. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01030	-	Invalid order for disabling node. Stop method missing.
+Node Manager was unable to disable the node because the stop method (ABORT/END/FLUSH) was missing. Retry giving the order.
+
+NODEMANAGER01031	-	Invalid order for disabling node. Invalid value for stop method: {0}
+Node Manager was unable to disable the node because the stop method (ABORT/END/FLUSH) had an invalid value. Retry giving the order.
+
+NODEMANAGER01032	-	Invalid order for disabling node. No node with ID {0}.
+Node Manager was unable to disable the node because none of the nodes has the given ID. Retry giving the order.
+
+NODEMANAGER01033	-	Invalid order enabling node. No node with ID {0}.
+Node Manager was unable to enable node because none of the nodes has the given ID. Retry giving the order.
+
+NODEMANAGER01034	-	Invalid order for killing node. Node ID is missing.
+Retry giving the order. If no order was given, ignore the error message.
+
+NODEMANAGER01035	-	Invalid order for killing node. No node with ID {0}.
+Node Manager was unable to kill the node because none of the nodes has the given ID. Retry giving the order.
+
+NODEMANAGER01036	-	Invalid order for reconfiguring process stream. New process stream version ID missing.
+The order was invalid because new process stream ID was missing. Retry giving the order and contact vendor if the problem persists.
+
+NODEMANAGER01037	-	Invalid order for reconfiguring process stream. Invalid value for new process stream version ID: {0}
+The order was invalid because the new process stream ID was invalid. Retry giving the order and contact vendor if the problem persists.
+
+NODEMANAGER01038	-	Unable to check if the order should to be executed in this host.
+Node Manager was unable to check if the host needs to process the order. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01039	-	Unable to swap control and binary directories of real time collector ''{0}''.
+When a real time collector is restarted in process stream reconfiguration, the new version of the node is started before the old one is stopped. The control and binary directories need to be changed for the new version. Node Manager is unable to start the new version of the node if this action fails. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01040	-	Invalid order for stopping process stream. Stop method missing.
+Node Manager was unable to stop the process stream because the stop method (ABORT/END/FLUSH) was missing. Retry giving the order.
+
+NODEMANAGER01041	-	Invalid order for stopping process stream. Invalid value for stop method: {0}
+Node Manager was unable to stop the process stream because the stop method (ABORT/END/FLUSH) had an invalid value. Retry giving the order.
+
+NODEMANAGER01042	-	Invalid order for reprocessing. No node with ID {0}.
+Node Manager was unable to start the reprocessing function of the node because the node does not exist. Retry giving the order.
+
+NODEMANAGER01043	-	Invalid order for restarting node. Stop method missing.
+Node Manager was unable to restart the node because the stop method (ABORT/END/FLUSH) was missing. Retry giving the order.
+
+NODEMANAGER01044	-	Invalid order for restarting node. Invalid value for stop method: {0}
+Node Manager was unable to restart the node because the stop method (ABORT/END/FLUSH) had an invalid value. Retry giving the order.
+
+NODEMANAGER01045	-	Invalid order for running schedule. No node with ID {0}.
+Node Manager was unable to schedule the node because the node does not exist. Retry giving the order.
+
+NODEMANAGER01046	-	Invalid order for running schedule. Unable schedule node ''{0}''.
+Node Manager was unable to schedule the node because the node does not have any schedule functionality. Retry giving the order.
+
+NODEMANAGER01047	-	Unable to order the node to reprocess its rejected data.
+Node Manager was unable to order the node to reprocess its rejected data. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01048	-	Node preparation failed.
+Node preparation contains all actions needed before the node can be started. This includes loading node binaries from the database and creating the directory structure for the node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01049	-	Unable to order the node to run its schedule now.
+Node Manager was unable to start a schedule for the node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01050	-	Unable to set the zero threshold for node ''{0}''.
+Node Manager was unable to set the new zero threshold value for the node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01051	-	Node initialisation failed. Node ''{0}'' failed before it finished its initialisation phase.
+Node Manager verifies that all nodes finish their initialisation phase before changing the status of the start process stream order to completed. If a node fails before finishing the initialisation, the order phase fails. Restart the failed nodes and if the problem persists, check that all node parameters are set correctly and that the node is installed properly.
+
+NODEMANAGER01052	-	Aborting order failed, unable to change the order status.
+Node Manager was unable to abort an order. Retry aborting the order.
+
+NODEMANAGER01053	-	Order execution failed. Critical order phase ''{0}'' failed.
+The order phase may be allowed to fail without stopping the order execution. Sometimes it is not allowed to fail and in such a case the entire order fails. Check the more detailed error messages to fix the order execution problem and retry giving the order.
+
+NODEMANAGER01054	-	Unable to load process stream attributes from the database.
+Node Manager was unable to load process stream attributes from the database. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01055	-	Unable to set process stream attributes for nodes.
+Node Manager was unable to set the attributes of the process stream for all nodes. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01056	-	Unable to load node attributes from the database.
+Node Manager was unable to load node attributes from the database. The database connection may be working improperly. Check the connection to fix the problem.
+
+NODEMANAGER01057	-	Unable to set node attributes for node ''{0}''.
+Node Manager was unable to set correct attributes for node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01058	-	Standard crash recovery for process stream failed. Unable to load orders from the database for process stream ''{0}''.
+Crash recovery is a standard procedure to verify that everything was shut down properly when Node Manager was stopped. The process stream orders may have become corrupted. Contact vendor to fix the problem.
+
+NODEMANAGER01059	-	Standard crash recovery for process stream failed. Crash recovery of process stream orders failed for process stream ''{0}''.
+Crash recovery is a verification that everything was shut down properly when Node Manager was stopped. The process stream orders may have become corrupted. Contact vendor to fix the problem.
+
+NODEMANAGER01060	-	Unable to execute the reconfiguration of process stream and node attributes for process stream ''{0}''.
+Node Manager was unable to reconfigure node and process stream attributes properly. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01061	-	Unable to stop the process stream controller of process stream ''{0}''.
+Node Manager was unable to finalise process stream. Stopping process stream controller requires that all nodes of the process stream are stopped and that no orders are pending for the process stream. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01062	-	Process stream ''{0}'' reconfiguration failed.
+Node Manager was unable to reconfigure process stream. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01063	-	Order phase aborted.
+Someone has aborted the order.
+
+NODEMANAGER01064	-	Unable to finish milestone {0}. Order has failed in host ''{1}''.
+Node Manager was unable to synchronise the order execution between different hosts. The execution of the order failed in some other host, which prevents execution from continuing in this host. Retry giving the order and check why the order failed.
+
+NODEMANAGER01065	-	Unable to load process stream configuration. Node ''{0}'' has an invalid type string: ''{1}''.
+The node configuration is invalid if the node does not have a type.
+
+NODEMANAGER01066	-	Invalid order for copying node data. No node with ID {0}.
+Node Manager was unable to give the order to node because the node does not exist. Retry giving the order.
+
+NODEMANAGER01067	-	Ordering node to copy data failed.
+Node Manager was unable to give the order to the node. Check more detailed error messages to fix the problem.
+
+NODEMANAGER01068	-	Invalid parameters for copy data order: {0}
+The parameters of the order are invalid. Retry giving the order and make sure that the target directory is given correctly.
+
+NODEMANAGER01069	-	Invalid destination directory ''{0}''.
+The destination directory is invalid. Check that the directory exists and has correct permissions. Retry giving the order with a valid directory.
+
+NODEMANAGER01070	-	Pending orders.
+Node Manager was unable to stop the process stream controller because there are orders pending. All orders must be executed before the controller can be stopped.
+
+NODEMANAGER01071	-	Node ''{0}'' is still running.
+Node Manager was unable to stop the process stream controller because there are nodes running. All nodes must be stopped before the controller can be stopped.
+
+NODEMANAGER01072	-	Invalid order type ''{0}''.
+Node Manager found an invalid order. No further actions needed.
+
+NODEMANAGER01073	-	No new name specified for the process stream.
+Node Manager was unable to change the process stream name because the new name was not specified.
+
+NODEMANAGER01074	-	Process stream is invalid. No node is reading link ''{0}'' on host ''{1}''.
+Process stream was invalid. If it was imported using System Tools, fix the configuration package XML. Contact vendor.
+
+NODEMANAGER01075	-	Unable to perform process stream reconfiguration. New process stream version is the same as the old one.
+Process stream reconfiguration cannot (and is not needed) to be run for the same process stream version. This may occur if two users give a reconfiguration order at the same time. Retry giving the order, if needed.
+
+NODEMANAGER01076	-	Unable to get time for olderThan.
+Node Manager is unable to get the value of the olderThan parameter. Retry giving the order and contact the vendor if the error reoccurs.
+
+NODEMANAGER01077	-	Unable to change attribute ''{0}'' of node ''{1}''.
+Node Manager is unable to change node attribute value. Retry giving the order and contact the vendor if the error reoccurs.
+
+NODEMANAGER01078	-	Invalid process stream configuration, unable to find matching transport node for sender with node ID {0}.
+Node Manager is unable to build process stream configuration. Contact vendor.
+
+NODEMANAGER01079	-	Unable to activate new process stream version in Node Manager internal database.
+Node Manager is unable to activate the new process stream version in Node Manager internal database. Contact vendor.
+
+NODEMANAGER01080	-	Process stream is invalid. No node is reading link ''{0}'' on host ''{1}''.
+Process stream configuration is invalid because it was created with older EL version than 5.3. Export stream configuration with system tools and import it back to fix the problem. System tools creates a new valid version of the process stream.
+
+NODEMANAGER01081	-	Process stream is invalid. No node is writing to link ''{0}'' on host ''{1}''.
+Process stream configuration is invalid because it was created with older EL version than 5.3. Export stream configuration with system tools and import it back to fix the problem. System tools creates a new valid version of the process stream.
+
+NODEMANAGER01082	-	Unable to load the new process stream configuration version.
+Node Manager is unable to load the new version of the process stream configuration. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER01083	-	Invalid order for starting process stream. Process stream version ID missing.
+Node Manager was unable to start the process stream because the unique version ID of the process stream was missing from the order. Contact vendor if the problem reoccurs.
+
+NODEMANAGER01084	-	Invalid order. Process stream ID missing.
+Node Manager was unable to execute the order because the ID of the process stream was missing from the order. Contact vendor if the problem reoccurs.
+
+NODEMANAGER01085	-	Invalid order. Process stream version ID missing.
+Node Manager was unable to execute the order because the unique version ID of the process stream was missing from the order. Contact vendor if the problem reoccurs.
+
+NODEMANAGER01086	-	Unable to initialise process stream. Errors in process stream configuration.
+Node Manager was unable to initialise the process stream. Check the more detailed error messages to fix the problem or contact vendor.
+
+NODEMANAGER01087	-	Unable to save process stream state to the database.
+The process stream could not be initialised properly, because Node Manager was unable to save the process stream state to the database. Check that the database is working properly.
+
+NODEMANAGER01088	-	Unable to load process stream state from the database.
+The process stream could not be initialised properly, because Node Manager was unable to load the process stream state from the database. Check that the database is working properly.
+
+NODEMANAGER01089    -   Unable to load process stream state from the database: {0}
+The process stream could not be initialised properly, because Node Manager was unable to load the process stream state from the database. Check that the database is working properly.
+
+
+
+
+NODEMANAGER02001	-	No data roots are configured for this host.
+All hosts need at least one data partition configured. Check the configuration of the host and run the installation tool if needed.
+
+NODEMANAGER02002	-	Unable to initialise data root ''{0}''.
+One of the data partitions configured in this host is invalid. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02003	-	An error occurred while checking node ''{0}'' binaries.
+An error occurred when Node Manager checked the node binaries. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02004	-	Unable to write messages for node: {0}
+Node Manager was unable to write a message file for the node. The message file is part of node configuration and it must be available when the node is started. Check that the directory permissions are correct and that there is enough disk space on the control partition.
+
+NODEMANAGER02005	-	Unable to set node priority, renice failed.
+Node Manager was unable to execute renice command. Check that Node Manager is running with correct priority (highest of normal user).
+
+NODEMANAGER02006	-	Storage root was not configured for this host.
+All hosts need a storage root configured. Check the configuration of the host and run the installation tool, if needed.
+
+NODEMANAGER02007	-	Control root was not configured for this host.
+All hosts need a control root configured. Check the configuration of the host and run the installation tool, if needed.
+
+NODEMANAGER02008	-	Storage root initialisation failed.
+Storage root was invalid. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02009	-	Control root initialisation failed.
+Control root was invalid. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02010	-	Node Manager lib directory initialisation failed.
+Node Manager lib directory ($EVENTLINK_HOME/lib) is invalid. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02011	-	Process stream status root directory initialisation failed.
+Process stream status root directory is invalid. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02012	-	Node ''{0}'' was unable to load its configuration file.
+The node was unable to load its configuration file. Check that the permissions in the filesystem are set correctly and that there is enough disk space on control partition.
+
+NODEMANAGER02013	-	Node ''{0}'' was unable to create audit file.
+The node was unable to create a file for error messages. Check that the permissions in the filesystem are set correctly and that there is enough disk space on control partition.
+
+NODEMANAGER02014	-	Binary check for transport node ''{0}'' failed. Binary file ''{1}'' is missing.
+Transport node binaries are missing. The install procedure was not executed properly. Contact vendor.
+
+NODEMANAGER02015	-	Binary check for transport node ''{0}'' failed. Unable to create binary file ''{1}''.
+Node Manager was unable to copy transport node binaries to correct place. Check that there is enough disk space on control partition.
+
+NODEMANAGER02016	-	Unable to order node ''{0}'' to copy data. Node is not running.
+This order can only be executed for running nodes. Enable the node and retry giving the order.
+
+NODEMANAGER02017	-	Node base not defined for node ''{0}''.
+Node Manager was unable to create a node because there was no Node Base defined for it.
+
+NODEMANAGER02018	-	Invalid number of node processes defined for node ''{0}'': {1}
+Invalid number of node processes was defined. Check the node attributes to fix the problem.
+
+NODEMANAGER02019	-	Binary file ''{0}'' does not exist in Node Manager lib directory.
+A binary file is missing from the Node Manager lib directory ($EVENTLINK_HOME/lib). Either the file has been deleted accidentally or the installation procedure has failed. Contact vendor.
+
+NODEMANAGER02020	-	Unable to write node parameters: {0}
+Node Manager was unable to write node parameter for the node. Check that there is enough disk space on control partition and that the directory permissions are set correctly.
+
+NODEMANAGER02021	-	Unable to write order for node: {0}
+Node Manager was unable to write order for the node. Check that there is enough disk space on control partition and that the directory permissions are set correctly.
+
+NODEMANAGER02022	-	Unable to read pid file for node: {0}
+The node did not start properly or the pid file is corrupted. Check that there is enough disk space on control partition and that the node configuration packages are working properly. Contact the vendor of the node configurations.
+
+NODEMANAGER02023	-	Executing node binary failed.
+Node Manager was unable to execute the node binary file. Check that the node binaries (c_node and perl_node in Node Manager lib directory, $EVENTLINK_HOME/lib) have correct permissions and that they exist. Contact vendor.
+
+NODEMANAGER02024	-	Node crash recovery failed.
+Node Manager was unable to analyse the state of the node. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02025	-	Unable to flush directory {0}. A running node produces data to the directory.
+Node Manager is unable to flush the directory if there are nodes producing new data into it. Retry giving the order.
+
+NODEMANAGER02026	-	Unable to create a directory using root name {0}. There is no such root directory.
+The directory was configured to use a root that is not available anymore. Check the data directories of the host configuration.
+
+NODEMANAGER02027	-	Unable to create symbolic links for node ''{0}''. Unable to create process stream status directory {1}.
+Node Manager was unable to create a symbolic link structure for the node. The purpose of directory structure is to make the search for node directories and files easier. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02028	-	Errors occurred while creating symbolic links for node ''{0}'': {1}
+Node Manager was unable to create a symbolic link structure for the node. The purpose of directory structure is to make the search for node directories and files easier. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER02029	-	Unable to load library paths for node ''{0}'' from the database.
+Node Manager was unable load node library paths from the database. Check the more detailed error messages for further details and make sure that the database connection is working properly.
+
+
+NODEMANAGER02030	-	Unable to restart node {0}.
+Node Manager was unable to restart the node automatically. Check that there is enough disk space and enable the node manually.
+
+NODEMANAGER02031	-	Invalid number of node processes defined for node ''{0}'': {1}. Number of processes must be higher than zero.
+Invalid number of node processes was defined. Check the node attributes to fix the problem.
+
+NODEMANAGER02032	-	Invalid number of node processes defined for node ''{0}'': {1}. Number of processes must be smaller than maximum number of processes {2}.
+Invalid number of node processes was defined. Check the node attributes to fix the problem.
+
+NODEMANAGER02033	-	Invalid number of node processes defined for non-scalable node ''{0}'': {1}.
+An invalid number of node processes was defined. Check the node attributes to fix the problem.
+
+NODEMANAGER02034	-	Invalid node heartbeat tolerance defined for node ''{0}'': {1}
+Invalid node heartbeat tolerance was defined. Check the node attributes to fix the problem.
+
+
+
+
+
+NODEMANAGER03001	-	Node ''{0}'' failed and was restarted.
+The node failed and the automatic monitoring system of Node Manager restarted it. If similar type of error messages are shown continuously, check the node configuration.
+
+NODEMANAGER03002	-	Node ''{0}'' failed for the third time and was disabled.
+The node failed for the third time and it is not restarted anymore. The node does not work properly and Node Manager does not try to monitor it because it would most likely fail again. Check the node configuration and parameters to fix the problem. Check if the node has produced any error messages that describe the problem at a more detailed level.
+
+NODEMANAGER03003	-	Disk space low in root directory ''{0}''. Threshold is {1} kB and available space is {2} kB.
+The partition is running low on disk space. Check that all process streams are running properly and that no other processes are producing unwanted data to the disk partition.
+
+NODEMANAGER03004	-	Disk space no longer below alarm threshold on root directory ''{0}''.
+There is now enough free disk space. The alarm is no longer on.
+
+NODEMANAGER03006	-	Unable to tar directory {0} to file {1}.
+Node Manager was unable to store data offline because packaging one directory failed. Check that there is enough disk space and that the tar binary is available in the host.
+
+NODEMANAGER03007	-	Unable to store file {0}. File does not exist anymore.
+The file to be stored was deleted before it could be stored. Retry giving the order.
+
+NODEMANAGER03008	-	Unable to create storage directory for file {0}. File {1} is blocking the action.
+Offline storing failed because a file with the same name existed already. Remove or rename the file that was preventing the directory creation.
+
+NODEMANAGER03009	-	Unable to copy file {0} to its storage directory.
+Node Manager was unable to copy the file to be stored into the storage directory. Check that there is enough disk space. Offline storaging may require large amount of free disk space temporarily.
+
+NODEMANAGER03010	-	Unable to load process stream and node names from the database.
+Node Manager was unable to load process stream and node names from the database. Check the database connection.
+
+NODEMANAGER03011	-	Node ''{0}'' aborted and was disabled.
+Node aborted its execution and is not restarted again. Check if the node has produced any error messages that describe the reason of aborting.
+
+NODEMANAGER03012	-	Node ''{0}'' was killed.
+The node was killed by Node Manager. Someone has given the order to kill the node.
+
+NODEMANAGER03013	-	Node ''{0}'' was terminated and disabled because it did not update its heartbeat.
+The node must update its heartbeat file regularly. If it does not, Node Manager kills it after a certain period. Check the node configuration and if the problem persists, contact the vendor of the node configuration package.
+
+NODEMANAGER03014	-	Node ''{0}'' was terminated because it did not update its heartbeat.
+The node must update its heartbeat file regularly. If it does not, Node Manager kills it after a certain period. Check the node configuration and if the problem persists, contact the vendor of the node configuration package.
+
+NODEMANAGER03016	-	Unable to write pid file {0}: {1}
+Node Manager was unable to write its pid file. Check that there is enough disk space and that the permissions of the directories are set correctly.
+
+NODEMANAGER03017	-	Unable to update Node Manager status into the database.
+Node Manager was unable to update its heartbeat and status in the database. Check the database connection.
+
+NODEMANAGER03018	-	Failure in crash recovery for buffer monitoring.
+Node Manager was unable to execute the crash recovery procedure for the buffer monitoring system. The rejected storages of the nodes may have changed.
+
+NODEMANAGER03020	-	Failed nodes in the system.
+Node Manager found failed nodes during startup. The details of the event list all failed nodes. The failed nodes are started automatically.
+
+NODEMANAGER03021	-	Node ''{0}'' has not updated its heartbeat.
+The node must update its heartbeat file regularly. Check the node configuration and if the problem persists, contact the vendor of the node configuration package.
+
+NODEMANAGER03022	-	The heartbeat of node instance number {0} was supposed to be updated {1} seconds ago.
+The node must update its heartbeat file regularly. Check the node configuration and if the problem persists, contact the vendor of the node configuration package.
+
+NODEMANAGER03023	-	Node index {0} aborted.
+Node aborted its execution and is not restarted again. Check if the node has produced any error messages that describe the reason of aborting.
+
+NODEMANAGER03024	-	Node index {0} was killed.
+The node was killed by Node Manager. Someone has given the order to kill the node.
+
+NODEMANAGER03025	-	Node index {0} failed.
+The node failed and the automatic monitoring system of Node Manager restarted it. If similar type of error messages are shown continuously, check the node configuration.
+
+NODEMANAGER03026	-	Node index {0} was terminated because it did not update its heartbeat for {1} seconds.
+The node must update its heartbeat file regularly. If it does not, Node Manager kills it after a certain period. Check the node configuration and if the problem persists, contact the vendor of the node configuration package.
+
+NODEMANAGER03027	-	Node ''{0}'' failed for the second time and was disabled.
+The node failed for the second time and it is not restarted anymore. The node does not work properly and Node Manager does not try to monitor it because it would most likely fail again. Check the node configuration and parameters to fix the problem. Check if the node has produced any error messages that describe the problem at a more detailed level.
+
+NODEMANAGER03028	-	Internal buffer directory ''{0}'' contains subdirectories.
+User is not allowed to copy or create any files or directories to internal buffer directories. Remove the subdirectories from the given buffer.
+
+NODEMANAGER03029	-	In-memory Storage ''{0}'' is running out of space. Threshold is {1} % and available space is {2} %.
+The storage is running out of space. Check the storage and cleanup or allocate more space for it.
+
+
+
+NODEMANAGER04001	-	Unable to bind port {0}: {1}
+Node Manager was unable to bind the defined port server port. The port is already in use or it may be reserved for a short period, if Node Manager has failed recently. Change the port of this host with the UI or System Tools.
+
+NODEMANAGER04002	-	Node Manager was not allowed to open port {0}: {1}
+Node Manager was unable to bind the defined port server port because it does not have permission to do it. Change the port value to be equal or higher than 1024.
+
+NODEMANAGER04003	-	Unable to load port server port allocation table from the database.
+Node Manager was unable to load port server port allocation table from the database because a database error occurred. Check that the database is working properly.
+
+NODEMANAGER04004	-	Unable to find address for host ''{0}''.
+The address of a host is missing. Check that the host is properly installed.
+
+NODEMANAGER04005	-	Unable to load Node Manager hosts.
+The port server was unable to load the hosts used by the system. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER04006	-	Unable to find receiver port on host ''{0}'' with key ''{1}''.
+Node Manager was unable to load the port of the receiver node. Check that the database is working properly.
+
+
+
+NODEMANAGER05001	-	An IO error occurred while trying to handle audit file {0}: {1}
+Node Manager was unable to read an audit file because an IO error occurred. Node Manager retries to read the file after a short period.
+
+NODEMANAGER05002	-	Errors in audit file on line ''{0}'': {1}
+A line in the audit file contains errors. The file is discarded because Node Manager is unable to handle it.
+
+NODEMANAGER05003	-	Errors in audit file ''{0}'': {1}
+An audit file contains errors. The file is discarded because Node Manager is unable to handle it.
+
+NODEMANAGER05004	-	A database error occurred while saving audit data into the database.
+The database connection may be down. Check more detailed error messages to fix the problem.
+
+NODEMANAGER05005	-	Invalid parameter name in audit plugin configuration file ''{0}''.
+Check the audit plugin configuration file. A valid parameter name can contain letters (a-z, A-Z), numbers, dash (-) and an underscore (_).
+
+NODEMANAGER05006	-	Invalid parameter value in audit plugin configuration file ''{0}''.
+Check the audit plugin configuration file. A valid parameter value does not contain white spaces, or if it does, it is written inside quotation marks. After the value there can be a comment which starts with the '#' sign.
+
+NODEMANAGER05007	-	Audit plugin config file ''{0}'' contains parameter ''{1}'' more than once.
+Check the audit plugin configuration file and remove the incorrect parameter.
+
+NODEMANAGER05008	-	Audit plugin configuration file ''{0}'' does not exist.
+Check the Node Manager properties file for audit plugin configurations.
+
+NODEMANAGER05009	-	IOException while reading audit plugin configuration file ''{0}'': {1}.
+Check the more detailed error messages to fix the problem.
+
+NODEMANAGER05010	-	Parameter ''classname'' not defined for plugin ''{0}''.
+Add the correct class name into the plugin configuration file.
+
+NODEMANAGER05011	-	Unable to load plugin ''{0}'', plugin class does not exist: {1}.
+Check that the plugin .jar file exists in the environment variable $CLASSPATH and make sure that the class name is written correctly in the plugin configuration file.
+
+NODEMANAGER05012	-	An error occurred while loading the class of plugin ''{0}'': {1}.
+Check that the plugin class name is defined correctly in the plugin configuration file. Contact the vendor of the audit plugin if the problem reoccurs.
+
+NODEMANAGER05013	-	An invalid plugin class defined for plugin ''{0}'': {1}
+Check that the plugin class name is defined correctly in the plugin configuration file. Plugin class must implement the AuditPlugin interface. Contact the vendor of the audit plugin if the problem reoccurs.
+
+NODEMANAGER05014	-	Plugin ''{0}'' initialisation failed: {1}
+Check the more detailed error messages to fix the problem.
+
+NODEMANAGER05015	-	Unable to save audit statistics and messages into the database.
+Check the more detailed error messages to fix the problem.
+
+NODEMANAGER05016	-	Unable to perform precommit for plugin ''{0}'': {1}
+One of the plugins failed in its precommit. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER05017	-	Unable to commit audit data updates in system database: {0}
+Check the database connection. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER05018	-	A plugin failed while processing file ''{0}'': {1}
+Check the more detailed error messages to fix the plugin.
+
+NODEMANAGER05019	-	Rejected audit file ''{0}'' from node ''{1}''.
+The node has produced an invalid audit file that needed to be rejected. Check Node Manager log file $EVENTLINK_HOME/log/nodemanager.log for more detailed information. Contact the vendor of the node.
+
+NODEMANAGER05020	-	Mandatory parameter ''{0}'' missing from the audit stream plugin configuration.
+Node Manager was unable to initialise Audit Stream Plug-in because mandatory parameter is missing from the configuration file. Add the parameter with a valid value to the configuration file ($EVENTLINK_HOME/internal/manager/plugins/auditstream.plugin).
+		 
+NODEMANAGER05021	-	Unable to create output directory ''{0}'' for Audit Stream plugin.
+Initialisation of Audit Stream Plug-in failed because the Plug-in is unable to create output directory for output files. Make sure that the output directory is correctly defined and Node Manager has permissions to create it.
+
+NODEMANAGER06003	-	Unable to get a database connection from connection pool: {0}
+Node Manager was unable to get new database connection from its connection pool. Check the database connection.
+
+NODEMANAGER06004	-	A database error occurred: {0}
+Database operation failed. Check the database connection.
+
+NODEMANAGER06005	-	Unable to parse line ''{0}'': {1}
+Node Manager was unable to parse a line in the audit file. The audit file is discarded and renamed.
+
+NODEMANAGER06006	-	Destination ID missing for line ''{0}''.
+Node Manager was unable to process audit line. Check that destination ID is defined for all distribution nodes and that the nodes are producing valid audit data.
+
+NODEMANAGER06007	-	Source ID missing for line ''{0}''.
+Node Manager was unable to process audit line. Check that source ID is defined for all collection nodes and that the nodes are producing valid audit data.
+
+NODEMANAGER06008	-	Too long value for field {0} on line ''{1}''. Length was {2}, expected maximum {3}.
+Node Manager was unable to process audit line. One of the fields had too long value. Check that the nodes are producing valid audit data.
+
+NODEMANAGER06010	-	An error occurred while trying to load database operation from file {0}: {1}
+Node Manager stores events into a file if they cannot be inserted into the database immediately. A new try to load the file to the database is made when Node Manager is started. The file is either corrupted or has some other faults in it. Check the file and remove it if it does not contain anything important.
+
+NODEMANAGER06011	-	An IO error occurred while trying to write node binary file ''{0}'': {1}
+Node Manager was unable to write node binary files to disk. Check that the directory permissions are set correctly and there is enough disk space left.
+
+NODEMANAGER06012	-	Unable to change the permissions of a node binary file ''{0}''.
+Node Manager was unable to change the permissions of a node binary files. Check that the directory permissions are set correctly.
+
+NODEMANAGER06013	-	Unable to load configuration for host ''{0}'' from the database, no such host available. The available hosts are: {1}.
+Node Manager was unable to load host configuration from the database because no such host exists. Check that the parameter 'nm.host' is configured correctly in the Node Manager properties file and correct it if needed.
+
+NODEMANAGER06014	-	Unable to load configuration for host ''{0}'' from the database, no hosts configured into the database.
+Node Manager was unable to load host configuration from the database because no host configurations exist. Run the install.pl installation script to finish the installation.
+
+NODEMANAGER06015	-	Value missing for field {0} on line ''{1}''.
+Node Manager was unable to process audit line. Value for one of the fields is missing. Check that the nodes are producing valid audit data.
+
+NODEMANAGER06019	-	Unable to create a node version ID and node ID for transport node.
+Node Manager was unable to get IDs for the transport node from the database. Check the database connection.
+
+NODEMANAGER06020	-	Starting order phase of order {0} failed, unable to find phase with ID {1}.
+Node Manager was unable to change the status of an order phase because the phase was missing. Retry giving the order if the order failed.
+
+NODEMANAGER06021	-	Updating order phase of order {0} failed, unable to find phase with ID {1}.
+Node Manager was unable to change the status of an order phase because the phase was missing. Retry giving the order if the order failed.
+
+NODEMANAGER06022	-	Stopping order phase of order {0} failed, unable to find phase with ID {1}.
+Node Manager was unable to change the status of an order phase because the phase was missing. Retry giving the order if the order failed.
+
+NODEMANAGER06023	-	Unable to save the event to the database.
+Node Manager was unable to store the event to the database. The event is stored into a file instead and Node Manager tries to store it into the database later.
+
+NODEMANAGER06024	-	Stream with version ID ''{0}'' is deleted but still monitored.
+Node Manager was unable to load nodes in a monitored process stream because the process stream version was deleted.
+
+NODEMANAGER06025	-	Source ID was null in collector  ''{0}''
+Source ID for a collector node was null in the audit file. The audit file is discarded and renamed.
+
+NODEMANAGER06026	-	Unable to resolve full pathname when loading files from database: {0}
+When loading node files from the system database, Node Manager was unable to resolve the full path name of the file.
+
+NODEMANAGER06027        -       Stream version not found for ID: {0}
+Stream version was not found for the specified ID.
+
+NODEMANAGER08001	-	Unable to initialise Alarm Dispatcher interface: {0}
+Node Manager was unable to initialise the Alarm Dispatcher interface. Check that Alarm Dispatcher is working properly and that the host and port configurations for Alarm Dispatcher are set correctly.
+
+
+NODEMANAGER09001    -   Unable to open ORI server port {0}: {1}
+The Online Request Interface (ORI) server was unable to start listening to the defined port. Check that the configured port number is free and use the install.pl command to reconfigure ORI server to use another port if needed.
+
+NODEMANAGER09002    -   Unable to close ORI client connection: {0}
+The Online Request Interface (ORI) server was unable to close the client connection. Check that the network works properly if the error reoccurs.
+
+NODEMANAGER09003    -   Unable to get the input data stream from client connection: {0}
+The Online Request Interface (ORI) server was unable to get the input data stream from the client connection. Check that the network works properly if the error reoccurs.
+
+NODEMANAGER09004    -   Unable to get the output data stream from client connection: {0}
+The Online Request Interface (ORI) server was unable to get the output data stream from the client connection. Check that the network works properly if the error reoccurs.
+
+NODEMANAGER09005    -   Unknown ORI executor type ''{0}''.
+Unknown Online Request Interface (ORI) executor type. Check that the host has the correct version of Comptel EventLink installed if the problem reoccurs.
+
+NODEMANAGER09006    -   Invalid ORI request.
+The Online Request Interface (ORI) server was unable to process the ORI request because some of the parameters were missing or were invalid. Check that the host has the correct version of Comptel EventLink installed and contact vendor if the problem reoccurs.
+
+NODEMANAGER09007    -   An error occurred while writing the HTTP response: {0}
+The Online Request Interface (ORI) server was unable to write the HTTP response. Check that the network works properly if the problem reoccurs.
+
+NODEMANAGER09008    -   ORI executor name missing from URL.
+The Online Request Interface (ORI) executor name was missing from the URL. Check that the requested URL is valid. Contact vendor if the problem reoccurs.
+
+NODEMANAGER09009    -   An error occurred while parsing URL: {0}
+Parsing the requested URL failed. Check that the requested URL is valid. Contact vendor if the problem reoccurs.
+
+NODEMANAGER09010    -   Unsupported HTTP method type, request line was ''{0}''.
+The Online Request Interface (ORI) server currently supports the HTTP method GET only. Check that the host has the correct version of Comptel EventLink installed if the problem reoccurs.
+
+NODEMANAGER09011    -   An error occurred while reading HTTP request (last line was ''{0}''): {1}
+The Online Request Interface (ORI) server was unable to read the HTTP request as the request is probably invalid. Contact vendor if the problem reoccurs.
+
+
+
+
+NODEMANAGER10001    -   Invalid time-slot directory name ''{0}'' detected in a rejected storage directory.
+The time-slot directory name in the rejected storage is invalid. The directory structure of the rejected storage is for Comptel EventLink internal use. All unknown directories are deleted automatically.
+
+NODEMANAGER10002    -   An error occurred while parsing rejected storage file name ''{0}'': {1}
+Node Manager detected an invalid file name in one of the rejected storages. The directory structure of the rejected storage is for Comptel EventLink internal use. All invalid files are removed automatically.
+
+NODEMANAGER10003    -   An error occurred while exporting ERs from rejected storage file ''{0}'' to temporary file ''{1}'': {2}
+Exporting the ERs from the rejected storage file failed. Check that the PATH environment variable is set correctly.
+
+NODEMANAGER10004    -	An error occurred while creating a list file of the rejected storage files: ''{0}'' : {1}
+Creating a list file of the rejected storage files failed. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER10005    -	An error occurred while creating a jar-package of the rejected storage files: ''{0}'' : {1}
+Creating a jar package of the rejected storage files failed. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER10007    -	Unable to rename list file ''{0}'' to ''{1}''
+Renaming a list file of rejected storage files failed.
+
+NODEMANAGER10008    -	Unable to initialise offline storaging system. Offline storing directory is not set.
+The offline storing directory must be set for all hosts. If the problem reoccurs, check the configuration of the host and run the installation script or contact vendor.
+
+NODEMANAGER10009    -	Unable to initialise offline storaging system.
+Node Manager was unable to initialise the offline storaging system. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER10010    -	Unable to initialise offline storaging system. Cleaning offlined files failed: {0}
+Node Manager was unable to initialise the offline storaging system. Check the more detailed error messages to fix the problem.	
+
+NODEMANAGER10011    -	Process stream not found for ID: {0}
+Process stream was not found for the specified ID. Check the ID and contact the vendor if the error reoccurs.
+
+NODEMANAGER10012    -	Node not found for ID: {0}
+Node was not found for the specified ID. Check the ID and contact the vendor if the error reoccurs.
+
+NODEMANAGER10013    -	An error occurred while loading process stream/node names.
+Loading the process stream and/or node names failed. Check the more detailed error messages to fix the problem.
+
+NODEMANAGER10014    -	An error occurred while taking rejected files offline. Unable to creating jar -file. {0}
+Creating the jar -file for rejected files failed.
+
+NODEMANAGER10015    -	Renaming jar -file ''{0}'' failed
+Unable to rename jar -file, when committing take offline action.
+
+NODEMANAGER10016    -   Abort could not be performed. Action status is: {0}
+Abort can't be done, because take offline status doesn't allow it.
+
+NODEMANAGER10017    -	Deleting jar -file ''{0}'' failed
+Unable to delete jar -file, when aborting take offline action.
+
+NODEMANAGER10018    -	Unable to update correction status for executionID {0}
+Unable to update execution ID when correcting rejected file.
+
+
+NODEMANAGER11001    -   Directory for node ''{0}'' doesn't exist or is unwritable.
+Nodes directory doesn't exist or there are no write permission for it.
+
+NODEMANAGER11002    -   Unable to create directory: {0}
+Unable to create directory for creating correction environment.
+
+NODEMANAGER11003    -   Unable to delete file: {0}
+Unable to delete file from correction environment.
+
+NODEMANAGER11004    -   Unable to delete directory: {0}
+Unable to delete directory from correction environment.
+
+NODEMANAGER11005    -   Unable to copy input file: {0}
+Unable to copy input file to correction environment.
+
+NODEMANAGER11006    -   No output file found
+Output file could not be found.
+
+NODEMANAGER11007    -   Unable to kill correction process: {0}
+Abort of correction failed, unable to kill correction process.
+
+NODEMANAGER11008    -   Unable to commit correction, status ''{0}'' doesn't allow it
+Abort of correction failed, unable to kill correction process.
+
+NODEMANAGER11009    -   Unable deploy system configuration changes
+Unable deploy system configuration changes.
+
+
+
+COMMON99004	-	Executing command ''{0}'' failed: {1}
+The system was unable to execute the given command. Check that the binary file exists.
+
+COMMON99005	-	Unable to copy file {0} to file {1}.
+Copying the file failed. Check that the target directory has enough disk space and that the user has write permission to the target directory.
+
+COMMON99006	-	Unable to calculate checksum for file {0}, file is missing: {1}
+The checksum is needed to verify that the file is loaded correctly.
+
+COMMON99007	-	Unable to calculate checksum for file {0}, error occurred while reading the file: {1}
+The checksum is needed to verify that the file is loaded correctly. Check that the file permissions are correct.
+
+COMMON99008	-	Unable to calculate checksum for file {0}, the algorithm for calculating the checksum was missing: {1}
+The Java package for calculating the checksum is missing. Check that the Java is installed correctly and contains all the required elements.
+
+COMMON99009	-	The file ''{0}'' does not exist.
+The file does not exist at all. The file may have been deleted accidentally or has not been installed at all. Contact vendor if the file is an important system file.
+
+COMMON99010	-	{0} is not file.
+The file has been replaced with a directory. Contact vendor if the file is an important system file.
+
+COMMON99011	-	{0} is not readable.
+Add read permissions for the user to the file.
+
+COMMON99012	-	{0} is not writable.
+Add write permissions for the user to the file.
+
+COMMON99013	-	The directory {0} does not exist.
+The directory is missing. Create the directory and set the correct permissions to it.
+
+COMMON99014	-	{0} is not directory.
+The directory was replaced with a file. Remove or rename the file and create the directory.
+
+COMMON99015	-	{0} is not readable.
+Add read (and execution) permissions for the user to the directory.
+
+COMMON99016	-	{0} is not writable.
+Add write permissions for the user to the directory.
+
+COMMON99017	-	Unable to change permissions of file {0}: {1}
+The system was unable to add executable permission to the file. Nodes need executable rights for all library files to be able to start properly. Check that the permissions of the directory are set correctly and that the Node Manager is started using the correct Unix user.
+
+
+
+
+COMMON98000	-	Unable to initialise database, unknown database vendor: {0}
+The database vendor was not recognised. Check the database vendor in the Node Manager properties file and replace it with the correct one.
+
+COMMON98001	-	Unable to create database connection pool: {0}
+Something failed in database connection initialisation. Check that the database is configured correctly and that it is running properly.
+
+COMMON98002	-	Unable to close the database connection pool: {0}
+The system was unable to clean up the database connections. Check the database connection.
+
+COMMON98003	-	Database connection test failed, unable to get a connection from the database connection pool: {0}
+Something failed in database connection initialisation. Check that the database is configured correctly and that it is running properly.
+
+COMMON98004	-	Unable to get DB connection from pool: {0}
+Something failed when the system was getting a connection from database connection pool. Check the database connection.
+
+COMMON98005	-	Database error occurred: {0}
+The database action failed. Check the database connection.
+
+COMMON98006	-	Unable to load file ''{0}'' from the database.
+The system is unable to load the file from the database. Check the database connection and file permissions.
+
+COMMON98018	-	Checksum mismatch. Checksum in database: {0}, Checksum of file: {1}.
+The file has an incorrect checksum in the database. Reinstall the package to the database.
+
+COMMON98019	-	File ''{0}'' not found: {1}
+The file is missing.
+
+COMMON98020	-	Unable to read or write to/from IO stream: {0}
+The system is unable to read/write from/to IO stream from the database. Check the database connection.
+
+COMMON98021	-	Error with buffered reader: {0}
+Problems occurred in IO stream buffering. Check the database connection and the file permissions.
+
+COMMON98022	-	Unable to calculate checksum: {0}
+Checksum calculation failed. Check the file permissions and that the file really exists.
+
+COMMON98023	-	Unable to install file into the database: {0}.
+The system is unable to install the file to the database. Check the database connection.
+
+
+COMMON97000     -       Invalid type flag in node type string at {0}, type string was ''{1}''.
+The node type string was invalid. There were invalid type flags set for the node. Check the node packages and make sure that the node type is set correctly.
+
+COMMON97001     -       Invalid node type, no type flags set.
+The node type string was invalid. There were no type flags set for the node. Check the node packages and make sure that the node type is set correctly.
+
+COMMON97002     -       Invalid node type string length.
+The length of the type string was invalid. Check the node packages and make sure that the node type is set correctly.
+
+COMMON97003     -       Invalid node flag in flag string at {0}, flag string was ''{1}''.
+The node flag string was invalid. There were flags set for the node. Check the node packages and make sure that the node flags are set correctly.
+
+COMMON97004	-	The size of the file ''{0}'' is zero.
+The size of the file cannot be zero.
+
+
+RECEIVER71000	E	Unable to get port number from port server.
+The initialisation phase of the receiver node failed, when trying to get the port number of the receiver node.
+
+RECEIVER71001	E	Connection acceptance failed.
+The connection acceptance failed. Check the more detailed error messages.
+
+RECEIVER71002	E	Handshaking failed with sender, close connection.
+The initialisation phase of the receiver node failed when trying to handshake with the sender node.
+
+RECEIVER71003	E	Initialisation failed at the beginning of process.
+Initialisation failed at the beginning of the process. Check the more detailed error messages.
+
+RECEIVER71004	E	Unable to receive header/file, close connection and wait for short moment.
+The file cannot be received. Close the connection and wait for a short moment. Check the more detailed error messages.
+
+RECEIVER71005	E	Unable to get handshake message from sender.
+Handshake cannot be got from the sender node. Check the more detailed error messages.
+
+RECEIVER71006	E	Authentication parameters are not correct. Message: %s
+Authentication parameters are not correct. The sender node is trying to handshake with a wrong receiver node.
+
+RECEIVER71007	E	Unable to send ACK of handshake message: %s
+The ACK handshake message cannot be sent. Check the more detailed error messages.
+
+RECEIVER71008	E	Unable to send ACK message.
+The ACK message cannot be sent. Check the more detailed error messages.
+
+RECEIVER71009	W	Unable to create socket: %s
+The socket cannot be created. For more information, see the reason in the message.
+
+RECEIVER71010	I	Unable to bind receiver socket: %s
+The socket cannot be bound. For more information, see the reason in the message.
+
+RECEIVER71011	E	Unable to receive header.
+The header cannot be received. Check the more detailed error messages.
+
+RECEIVER71012	E	Unable to get file handle for binary file.
+The file handle cannot be got for the binary file. Check the more detailed error messages.
+
+RECEIVER71013	E	Error when receiving binary file.
+An error occurred while receiving binary file. Check the more detailed error messages.
+
+RECEIVER71014	E	Error when writing binary file block to disk.
+An error occurred while a binary file block was written to a disk. Check the more detailed error messages.
+
+RECEIVER71015	E	Node Base is unable to close binary file
+The Node Base is unable to close a binary file. Check the more detailed error messages.
+
+RECEIVER71016	E	Unable to get file handle for internal file.
+A file handle cannot be got for an internal file. Check the more detailed error messages.
+
+RECEIVER71017	E	Error when receiving internal file
+An error occurred while receiving an internal file. Check the more detailed error messages.
+
+RECEIVER71018	E	Error when writing internal file block to disk
+An error occurred while writing an internal file block to disk. Check the more detailed error messages.
+
+RECEIVER71019	E	Node Base is unable to close internal file
+The Node Base is unable to close a binary file. Check the more detailed error messages.
+
+RECEIVER71020	W	Connection to sender closed
+The connection to sender node was closed.
+
+RECEIVER71021   E      Unable to Initialise Receiver. Cannot allocate memory.
+Receiver application cannot run as it cannot allocate memory.
+
+RECEIVER71022	E	Error when receiving bytes expected of binary file.
+An error occurred while receiving bytes expected of binary file. Check the more detailed error messages.
+
+RECEIVER71023	E	Error when receiving bytes expected of internal file.
+An error occurred while receiving bytes expected of internal file. Check the more detailed error messages.
+
+SENDER70000	E	Unable to get port number from port server
+The initialisation phase of the sender node failed, when trying to get the port number of the receiver node.
+
+SENDER70001	E	Unable to get host address from port server
+The initialisation phase of the sender node failed, when trying to get the host address of the receiver node.
+
+SENDER70002	E	Handshaking failed with receiver, close connection
+The initialisation phase of the sender node failed, when trying to handshake with the receiver node.
+
+SENDER70003	W	Initialisation failed at the beginning of process
+Initialisation failed at the beginning of process. Check the more detailed error messages.
+
+SENDER70004	E	Unable to send binary file, connection closed.
+The binary file cannot be sent and the connection is closed. Check the more detailed error messages.
+
+SENDER70005	E	Unable to send internal file, connection closed
+The internal file cannot be sent and the connection is closed. Check the more detailed error messages.
+
+SENDER70006	E	Unable to get ACK, connection closed
+The ACK cannot be got and the connection is closed. Check the more detailed error messages.
+
+SENDER70007	W	Unable to connect to receiver
+Connection to the receiver node cannot be established. Check the more detailed error messages.
+
+SENDER70008	E	Unable to send handshake message: %s
+The handshake message specified in the message cannot be sent. Check the more detailed error messages.
+
+SENDER70009	E	Unable to get ACK of handshake message.
+Unable to get ACK of handshake message. Check the more detailed error messages.
+
+SENDER70010	E	Wrong message received: %s
+A wrong message, specified in the message, was received. Check the more detailed error messages.
+
+SENDER70011	E	Unable to send header.
+The header cannot be sent. Check the more detailed error messages.
+
+SENDER70012	E	Connection closed by receiver, when sending header
+An unexpected failure occurred in the receiver node.
+
+SENDER70013	E	Unable to send file name.
+The file name cannot be sent. Check the more detailed error messages.
+
+SENDER70014	E	Connection closed by receiver when sending file name
+An unexpected failure occurred in the receiver node.
+
+SENDER70015	E	Unable to connect to the receiver.  %s
+Connection to the receiver node cannot be established. For more information, see the reason in the message.
+
+SENDER70016	E	Connection to receiver closed.
+Connection to the receiver node was closed.
+
+SENDER70017	E       Unable to Initialise Sender. Cannot allocate memory.
+Sender application cannot run as it cannot allocate memory.
+
+
+
+
+TRANSPORT72000	W	The network is down
+The network is down.
+
+TRANSPORT72001	I	The network is ok
+The message is displayed after the problem in message TRANSPORT72000 has been corrected. No action required.
+
+
+
+
+NODEBASE001 E   Could not open file %s (mode '%s') : %s
+The file could not be opened. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE002 E   Unable to read file %s: %s
+The file could not be read. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE003 E   File %s contains broken records
+If the node has been run from the command line for testing purposes, fetch it from the discarded files directory and correct it. The file name provided in the message instructs where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE004 E   Unable to allocate memory
+There is not enough free memory available in the machine.
+
+NODEBASE005 W   Schedule failed, next retry at %02d:%02d
+Scheduled execution failed but is retried.
+
+NODEBASE006 W   Schedule failed
+Scheduled execution failed and will not be retried.
+
+NODEBASE007 W   Schedule was not run on time
+Scheduled execution was delayed. One or more scheduled executions were not run.
+
+NODEBASE008 E   Node application error: unknown output link '%s'
+The output link has not been defined in the process stream configuration. Check and correct the process stream configuration. If the rule set configuration is faulty, contact the vendor.
+
+NODEBASE009 E   Unable to write to file %s: %s
+It was not possible to write to the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE010 E   Unable to rename file %s to %s: %s
+It was not possible to rename the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE011 E   Syntax error in configuration file %s line %d, %s does not contain storage name
+The configuration for output link or rejected data storage is incorrect. If the node has been run from the command line for testing purposes, check and correct the configuration. In all other cases, contact the vendor.
+
+NODEBASE012 E   Mandatory parameter %s is not defined in configuration file %s
+The configuration file does not contain a mandatory parameter. If the node has been run from the command line for testing purposes, check and correct the configuration. In all other cases, contact the vendor.
+
+NODEBASE013 E   Unable to truncate file %s: %s
+It was not possible to truncate the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE014 E   Unable to delete file %s: %s
+It was not possible to delete the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE016 E   Unable to open directory %s : %s
+It was not possible to open the directory. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE017 E   Unable to fork a child process: %s
+There is not enough memory or some Unix resources are missing. Correct the problem and restart the node.
+
+NODEBASE018 E   Syntax error in configuration file %s, line %d
+There is a syntax error in the configuration file. If the node has been run from the command line for testing purposes, check and correct the configuration of the application parameters. The line number provided in the message instructs where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE019 E   Unable to create a pipe: %s
+There is not enough memory or some Unix resources are missing. Correct the problem and restart the node.
+
+NODEBASE021 E   Unable to close file %s: %s
+It was not possible to close the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE022 E   Unable to load library %s: %s
+It was not possible to load the required library. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE024 E   Invalid schedule string: %s
+The given schedule parameter is incorrect. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE025 E   Unable to check for free space for file %s: %s
+It was not possible to check for free space when writing to the file. If the node has been run from the command line for testing purposes, check and correct it. The file name and reason provided in the message instruct where to locate the problem. In all other cases, contact the vendor.
+
+NODEBASE026 E   Unable to parse input file version %d, Node base input file version is %d
+The input file can not be processed with the current version of Nodebase, it was generated with a newer version of Nodebase.
+
+NODEBASE027 W   Discarding input file %s, renaming it to %s
+The input file could not be processed and was discarded.
+
+NODEBASE029 W   Message limit of %d reached, processing aborted
+The node application is printing out too many event messages. To prevent system database from becoming full with these messages, the node was aborted. The node application must be fixed before the current input file can be properly processed.
+
+NODEBASE030 I	Finished processing input files
+The node has processed all files in the input directories and has shut down. Use option -s to make the node stay resident after processing all files, or run the node in daemon mode with -d option.
+
+NODEBASE032 E	Number of parallel nodes changed from %d to %d before commit phase was finished, processing aborted
+The number of parallel nodes should not be changed when the node has failed. Restart the node so it can finish the commit phase, and unless the node fails again, then change the number of parallel nodes.
+
+NODEBASE033 E 	Application error, illegal call of pre/post commit
+The node application called pre/post commit at inappropriate time, or the application commit is not enabled for the node. If the node has been run from the command line for testing purposes, check and correct it. In all other cases, contact the vendor.
+
+NODEBASE034 E	Application requested discarding of the input file %s while part of the file was already commited, processing aborted
+The commit interval parameteer has been set for this node, but the node application does not allow it's use since it can discard input. If the node has been run from the command line for testing purposes, check and correct it. In all other cases, contact the vendor.
+
+NODEBASE035 E	Invalid use of ApplicationCommit parameter
+The application in use does not support the ApplicationCommit parameter, it did not execute Node Base's commit procedures in the application's commit function. If the node has been run from the command line for testing purposes, check and correct it. In all other cases, contact the vendor.
+
+NODEBASE036 W	Discarding records %d - %d from input file %s to %s
+There was an error in processing this set of records and they were discarded.
+
+NODEBASE037 E	Undefined audit key used: %s
+Explanation missing.
+
+NODEBASE038 E	Invalid call of audit_filein_discarded function
+The function audit_file_in must be called before calling audit_filein_discarded. If the node has been run from the command line for testing purposes, check and correct it. In all other cases, contact the vendor.
+
+PERLNODE001 E   Could not initialize library, perl_init function not found
+Explanation missing.
+
+PERLNODE002 E   Perl application app*.pl not found from %s
+Explanation missing.
+
+PERLNODE003 E   Parse error in perl application %s
+Explanation missing.
+
+PERLNODE004 E   Application error in function %s: %s
+Explanation missing.
+
+JAVANODE001 E   Unable to open ApplicationFilePath directory '%s'.
+Node program cannot open the directory 'ApplicationFilePath'. Check its permissions.
+
+JAVANODE002 E   Java application app_*.jar not found from %s
+Explanation missing.
+
+JAVANODE003 E   Classpath too long.
+The generated runtime classpath is too long. Remove unneccessary jar files from the 'ApplicationFilePath' directory or shorten the filenames.
+
+JAVANODE004 E   Unable to create Java Virtual Machine. Errcode %d.
+For some reason, the startup of JVM failed.
+
+JAVANODE005 E   Unable to find Java application class '%s' from classpath '%s'
+The specified class cannot be located via the normal class loading procedures.
+
+JAVANODE006 E   Exception occured in function %s: '%s'
+A Java-level exception has occured during execution.
+
+JAVANODE007 E   'EVENTLINK_HOME' not set.
+Node was unable to read 'EVENTLINK_HOME' environment variable.
+
+
+
+
+SYSTEMTOOLSMSG10001	-	\nDo you want to create backup file of the deleted data? Please Answer y/n [{0}]
+
+SYSTEMTOOLS50000	-	Unable to load message file. {0}
+SYSTEMTOOLS50001	-	Unable to initialise database connection.
+SYSTEMTOOLS50002	-	Unable to read the properties for database connection. {0}
+
+SYSTEMTOOLS52000	-	xml menu file {0} does not exist.
+SYSTEMTOOLS52001	-	xml menu file {0} is not a file.
+SYSTEMTOOLS52002	-	xml menu file {0} is not readable.
+SYSTEMTOOLS52003	-	Creating directory failed. {0}
+SYSTEMTOOLS52004	-	Creating archive file failed. {0}
+SYSTEMTOOLS52005        -       Importing installation specific host failed.
+SYSTEMTOOLS52006        -       Importing installation specific schedule setting failed.
+SYSTEMTOOLS52007        -       Importing installation specific parameter failed.
+SYSTEMTOOLS52008        -       Importing mutable parameters failed.
+SYSTEMTOOLS52009        -       No hosts have been installed.
+
+SYSTEMTOOLS53000	-	Provide either process stream ID or name.
+SYSTEMTOOLS53001	-	Provide process stream version.
+SYSTEMTOOLS53002	-	Provide type of stop.
+SYSTEMTOOLS53003	-	Invalid type of stop {0}.
+SYSTEMTOOLS53004	-	Provide node ID.
+SYSTEMTOOLS53005	-	Provide order ID.
+SYSTEMTOOLS53006	-	Provide process stream ID.
+SYSTEMTOOLS53007	-	Provide directory name.
+SYSTEMTOOLS53008	-	Provide target archive name.
+SYSTEMTOOLS53009	-	Provide archive name.
+SYSTEMTOOLS53010	-	Provide target directory name.
+SYSTEMTOOLS53011	-	Provide package or directory name.
+SYSTEMTOOLS53012	-	Provide application name.
+SYSTEMTOOLS53013	-	Provide application version.
+SYSTEMTOOLS53014	-	Provide target package or directory name.
+SYSTEMTOOLS53015	-	Provide configuration name.
+SYSTEMTOOLS53016	-	Provide configuration version.
+SYSTEMTOOLS53017	-	Provide number of days.
+SYSTEMTOOLS53018	-	BatchTool initialisation failed.
+SYSTEMTOOLS53019	-	Negative values are not allowed for number of days.
+SYSTEMTOOLS53020	-	Error when parsing command line arguments. {0}
+SYSTEMTOOLS53021	-	Provide either process stream ID or name, not both.
+SYSTEMTOOLS53022	-	Illegal command line arguments: {0}
+SYSTEMTOOLS53023	-	Provide link name.
+SYSTEMTOOLS53024	-	Provide number of files.
+SYSTEMTOOLS53025	-	Number of files must be higher than zero.
+SYSTEMTOOLS53026	-	Reading directory failed. {0}
+SYSTEMTOOLS53027	-	Reading archive file failed. {0}
+SYSTEMTOOLS53028        -       Importing installation specific host failed.
+SYSTEMTOOLS53029        -       Unknown installation specific host {0}.
+SYSTEMTOOLS53030        -       Importing installation specific schedule setting failed.
+SYSTEMTOOLS53031        -       Importing installation specific parameter failed.
+SYSTEMTOOLS53032        -       Importing mutable parameters failed.
+SYSTEMTOOLS53033	-	Host {0} is not found from Comptel EventLink configuration.
+SYSTEMTOOLS53034	-	Invalid default host {0}, no replacing host defined.
+SYSTEMTOOLS53035	-	Provide level of diagnostic.
+SYSTEMTOOLS53036	-	Invalid level of diagnostic {0}.
+SYSTEMTOOLS53037	-	Unable to find node with ID {0}. 
+
+SYSTEMTOOLS54000	-	Unable to load node information.
+SYSTEMTOOLS54001	-	Unable to load order information.
+SYSTEMTOOLS54002	-	Unable to load order phase information.
+SYSTEMTOOLS54003	-	Unable to add order.
+SYSTEMTOOLS54004	-	Unable to load process stream information.
+SYSTEMTOOLS54005	-	Unable to find active process stream with ID {0}.
+SYSTEMTOOLS54006	-	Unable to enable node with ID {0}. The status is already RUNNING.
+SYSTEMTOOLS54007	-	Unable to reconfigure active process stream version {0}.
+SYSTEMTOOLS54008	-	Unable to find active node with ID {0}.
+SYSTEMTOOLS54009	-	Unable to disable node with ID {0}. The status should be RUNNING or FAILED.
+SYSTEMTOOLS54010	-	Unable to restart node with ID {0}. The status is not RUNNING.
+SYSTEMTOOLS54011	-	Unable to find existing process stream with ID {0} and version {1}.
+SYSTEMTOOLS54012	-	Unable to find existing process stream with streamVersionID {0}.
+SYSTEMTOOLS54013	-	Unable to enable node {0} because process stream {1} has never been started before.
+SYSTEMTOOLS54014	-	Unable to load monitored process stream information.
+SYSTEMTOOLS54015	-	Unable to load process stream status information.
+SYSTEMTOOLS54016	-	Unable to add order because status for process stream {0} is {1}.
+SYSTEMTOOLS54017	-	Unable to restart process streams.
+SYSTEMTOOLS54018	-	Unable to set process stream start time.
+SYSTEMTOOLS54019	-	Unable to reconfigure process stream version because process stream status is UNKNOWN and force option was not given.
+SYSTEMTOOLS54020        -       Unable to disable node with ID {0}. The node status is FAILED so the type of stop must be ABORT.
+
+SYSTEMTOOLS55000	-	The package does not contain all of the required subdirectories or files in dir: {0}.
+SYSTEMTOOLS55001	-	PackageHandler is unable to read package from directory: {0}. {1}
+SYSTEMTOOLS55002	-	No package documents to write.
+SYSTEMTOOLS55003	-	Unable to write package to directory: {0}.
+SYSTEMTOOLS55004	-	Unable to export to directory: {0}.
+SYSTEMTOOLS55005	-	Unable to get package type, archive file: {0}
+SYSTEMTOOLS55006	-	Unable to get package type, archive file:{0}. {1}
+SYSTEMTOOLS55007	-	Unable to find manifest file.
+SYSTEMTOOLS55008	-	Unable to get manifest file. {0}
+SYSTEMTOOLS55009	-	Unable to extract file: {0}. {1}
+SYSTEMTOOLS55010	-	Unable to read from directory: {0}.
+SYSTEMTOOLS55011	-	Unable to read from archive: {0}.
+SYSTEMTOOLS55012	-	Unable to import package: {0}.
+SYSTEMTOOLS55013	-	Unable to export to file: {0}.
+SYSTEMTOOLS55014	-	Unable to create archive file for directory: {0}.
+SYSTEMTOOLS55015	-	Package directory check failed for directory: {0}.
+SYSTEMTOOLS55016	-	Unable to compress directory: {0}.
+SYSTEMTOOLS55017	-	Unable to read and validate file to PackageHandler.
+SYSTEMTOOLS55018	-	Unable to add package to PackageHandler.
+SYSTEMTOOLS55019	-	Unable to get package files.
+SYSTEMTOOLS55020	-	Unable to get docs.
+SYSTEMTOOLS55021	-	Unable to add package files to reader.
+SYSTEMTOOLS55022	-	Unable to load application information.
+SYSTEMTOOLS55023	-	Unable to load application version information.
+SYSTEMTOOLS55024	-	Unable to load configuration information.
+SYSTEMTOOLS55025	-	Unable to load configuration version information.
+SYSTEMTOOLS55026	-	Unable to clean Node Manager orders.
+SYSTEMTOOLS55027	-	Unable to clean events and messages.
+SYSTEMTOOLS55028	-	Unable to clean audit trail data.
+SYSTEMTOOLS55029	-	Unable to load library information.
+SYSTEMTOOLS55030	-	Unable to load library version information.
+
+SYSTEMTOOLS56001	-	Unable to read and validate file: {0}.
+SYSTEMTOOLS56002	-	Unable to get {0} package files.
+SYSTEMTOOLS56003	-	Unable to write file: {0}
+SYSTEMTOOLS56004	-	Unable to get {0} doc files.
+SYSTEMTOOLS56005	-	Unable to import package. Package's Comptel EventLink version {0} does not match the required version {1}.
+
+SYSTEMTOOLS56006	-	Unable to load {0} doc file with key name and version: {1}, filename: {2}
+SYSTEMTOOLS56007	-	Unable to load {0} package file with key name and version: {1}, filename: {2}, os: {3}
+SYSTEMTOOLS56008	-	Unable to load package files for os: {0}.
+SYSTEMTOOLS56009	-	Error occurred when validating package: {0}
+SYSTEMTOOLS56010	-	Unable to read package xml-file.
+SYSTEMTOOLS56011	-	Unable to find XML Schema file: {0}.
+SYSTEMTOOLS56012	-	XML Schema parse error. {0}.
+SYSTEMTOOLS56013	-	Unable to get doc. {0}
+SYSTEMTOOLS56014	-	Unable to read package file: {0}.
+SYSTEMTOOLS56015	-	Unable to write package.
+
+SYSTEMTOOLS57000	-	Unable to load host information.
+SYSTEMTOOLS57001	-	Unable to load process stream information.
+SYSTEMTOOLS57002	-	Unable to find process stream {0}.
+SYSTEMTOOLS57003	-	Unable to load process stream status information.
+
+SYSTEMTOOLS58000	-	Unable to add application.
+SYSTEMTOOLS58001	-	Unable to get database connection from pool. {0} . System Tools was unable to establish a connection to the database. Please check the database connection and the parameters of the database in Node Manager properties file.
+SYSTEMTOOLS58002	-	Database error occurred. {0}
+SYSTEMTOOLS58003	-	Application package name: {0} and version: {1} is missing when trying to insert configuration.
+SYSTEMTOOLS58004	-	Unable to add configuration.
+SYSTEMTOOLS58005	-	Unable to add process stream: {0}.
+SYSTEMTOOLS58006	-	Unable to insert application files with application name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58007	-	Unable to insert configuration files with configuration name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58008	-	Unable to insert doc files with application name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58009	-	Unable to insert doc files with configuration name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58010	-	Unable to replace application files with application name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58011	-	Unable to replace configuration files with configuration name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58012	-	Unable to replace doc files with application name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58013	-	Unable to replace doc files with configuration name: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58014	-	Application with name: {0} and version: {1} does not exist.
+SYSTEMTOOLS58015	-	Configuration with name: {0} and version: {1} does not exist.
+SYSTEMTOOLS58016	-	Unable to load process stream with streamVersionID: {0}. {1}
+SYSTEMTOOLS58017	-	Configuration package name: ''{0}'' and version: ''{1}'' is missing when trying to insert process stream.
+SYSTEMTOOLS58018	-	Unable to add process stream.
+SYSTEMTOOLS58019	-	Unable to write backup file. {0}
+SYSTEMTOOLS58020	-	Unable to import {0} package. {1}
+SYSTEMTOOLS58021	-	Process stream ''{0}'' already exists.
+SYSTEMTOOLS58022	-	Unable to add new version for process stream ''{0}'' because the process stream does not exist.
+SYSTEMTOOLS58023	-	Unable to get new DocumentBuilder. {0}
+SYSTEMTOOLS58024        -       An SQL error occurred: {0}. System tools were unable to execute SQL statement. Please check database.
+SYSTEMTOOLS58025        -       Package {0} {1} already exists in the database.
+SYSTEMTOOLS58026	-	Library with name: {0} and version: {1} does not exist.
+SYSTEMTOOLS58028	-	writing_node_name ''{0}'' does not exist.
+SYSTEMTOOLS58029	-	Stream configuration with name: {0} and version: {1} does not exist.
+SYSTEMTOOLS58031	-	Node ''{0}'' in node group not found.
+SYSTEMTOOLS58032	-	Unable to find the file ''{0}''. {1}
+SYSTEMTOOLS58033	-	Unable to calculate checksum for the file ''{0}''. {1}
+SYSTEMTOOLS58034	-	Unable to find stream: ''{0}'' and version: ''{1}''.
+SYSTEMTOOLS58035	-	Unable to write the file ''{0}''. {1}
+SYSTEMTOOLS58036	-	Unable to get version ID with sql ''{0}'' and key ''{1}''.
+SYSTEMTOOLS58037	-	Unable to load package key when table ''{0}'' and version ID ''{1}''.
+SYSTEMTOOLS58040        -       Unable to get version ID when stream name is ''{0}'', stream version is {1} and node name is ''{2}''.
+SYSTEMTOOLS58041	-	The size of the file ''{0}'' is zero.
+SYSTEMTOOLS58042	-	Unable to get information from database about process streams. {0}
+SYSTEMTOOLS58043	-	Unable to delete unused packages. {0}
+SYSTEMTOOLS58044	-	Unable to load process stream id. {0}
+
+
+SYSTEMTOOLS59000	-	Unable to find environment variable. {0}
+
+SYSTEMTOOLS60000        -       Unable to find the file ''{0}''. System Tools was unable to find the file. Please check that the file exists.
+SYSTEMTOOLS60001        -       Unable to read or write to file ''{0}''. System tools were unable to read/write to a file. Please check the file exists and has correct permissions.
+SYSTEMTOOLS60002        -       Unable to check schedule entry ''{0}''. System tools were unable to validate schedule entry. Please check the schdule entry.
+SYSTEMTOOLS60003        -       Invalid part in schedule entry ''{0}''.System tools were unable to validate schedule entry. Schdule entry is below/above limits.Check the entry.
+SYSTEMTOOLS60004        -       Package type not found ''{0}''. System tools were unable to validate the package type. Check the entry.
+SYSTEMTOOLS60005        -       Package not identified. System tools are unable to support this package version. Check the package version.
+SYSTEMTOOLS60006        -       Undefined package type for ''{0}''. Check the entry.
+SYSTEMTOOLS60007        -       Parser configuration failed. {0}
+SYSTEMTOOLS60008        -       Version number must be numeric.
+SYSTEMTOOLS60009        -       Unable to set node values. {0}
+SYSTEMTOOLS60010	-	Unable to find environment variable. {0}
+SYSTEMTOOLS60011	-	Unable to add executable rights to the file ''{0}''.
+SYSTEMTOOLS60012	-	Unable to extract the file ''{0}'', ''{1}''.
+SYSTEMTOOLS60013	-	Unable to find the file ''{0}'' when archiving.
+SYSTEMTOOLS60014	-	Unable to add the file ''{0}'' inside the archive file ''{1}''. ''{2}''
+SYSTEMTOOLS60015	-	XML file ''{0}'' with version ''{1}'' when version ''{2}'' required.
+SYSTEMTOOLS60016	-	Wrong XML format. {0}
+SYSTEMTOOLS60017	-	Unable to read schema file ''{0}''. {1}
+SYSTEMTOOLS60018	-	Unable to read XML file ''{0}''. {1}
+SYSTEMTOOLS60019	-	Unable to write file ''{0}''. {1}
+SYSTEMTOOLS60020        -       Element ''{0}'', {1} found multiple times.
+SYSTEMTOOLS60021	-	Process stream and node package archives cannot be created from the directory.
+SYSTEMTOOLS60022	-	File ''{0}'' is an invalid package XML file. File does not have a valid ''elversion'' tag.
+SYSTEMTOOLS60023	-	Invalid stream configuration, unconnected input link ''{0}'' found for node ''{1}''.
+SYSTEMTOOLS60024	-	Unable to calculate checksum for transport node key: {0}
+SYSTEMTOOLS60025	-	Unable to validate the package type. The directory: ''{0}'' does not exist
+SYSTEMTOOLS60029	-	The version number of package must have format MajorVersion.MinorVersion.DefectVersion.
+
+SYSTEMTOOLS61001	-	Unable to export application package.
+SYSTEMTOOLS61002	-	Unable to export configuration package.
+SYSTEMTOOLS61003	-	Unable to export library package.
+SYSTEMTOOLS61004	-	Unable to export node package.
+SYSTEMTOOLS61005	-	Unable to export stream config Package.
+SYSTEMTOOLS61006	-	Unable to export stream package.
+SYSTEMTOOLS61007	-	Unable to create archive.
+SYSTEMTOOLS61008	-	Unable to extract archive. 
+
+SYSTEMTOOLS62000	-	Unable to create backup of properties file ''{0}''.
+SYSTEMTOOLS62001	-	Unable to rename the temporary modified file to properties file {0}.
+SYSTEMTOOLS62002	-	Unable to modify properties file ''{0}''. {1}
+SYSTEMTOOLS62003	-	Unable to read properties file ''{0}''. {1}
+
+INSTALL01000	-	Unable to load message file {0}.
+INSTALL01001	-	Empty answer not accepted. Try again.
+INSTALL01002	-	Invalid number. Try again.
+INSTALL01008	-	Error reading input. {0}
+INSTALL01009	-	Invalid choice: {0}
+INSTALL01012	-	Unable to create directory {0}.
+INSTALL01013	-	Unable to load system data from database.
+INSTALL01014	-	Unable to load host data from database.
+INSTALL01015	-	Unable to save host data to database.
+INSTALL01016	-	Unable to save system data to database.
+INSTALL01017	-	Unable to create user ''{0}''.
+INSTALL01018	-	Unable to grant access rights to user ''{0}''.
+INSTALL01019	-	Error occurred when trying to create user. {0}
+INSTALL01020	-	Error occurred when trying to check the database. {0}
+INSTALL01021	-	Unable to create the database. {0}
+INSTALL01022	-	Database script {0} does not exist.
+INSTALL01023	-	Database script {0} is not a file.
+INSTALL01024	-	Database script {0} is not readable.
+INSTALL01025	-	Unable to create the database. Return value is {0}.
+INSTALL01026	-	ORACLE_HOME points to wrong place.
+INSTALL01028	-	Unable to create database connection.
+INSTALL01029	-	Environment variable ORACLE_HOME missing.
+INSTALL01030	-	Environment variable PPATH missing.
+INSTALL01031	-	Unable to add messages to database. {0}
+INSTALL01032	-	The user must be created for PostgreSQL before installation.
+INSTALL01033	-	Give an absolute path name.
+INSTALL01034	-	Port must be within range from 1024 to 65535.
+INSTALL01035	-	Accepted value for number of diagnostic files is between 1 and 999999.
+INSTALL01036	-	Accepted value for number of diagnostic messages is between 100 and 100000.
+INSTALL01037	-	At least one data buffering directory has to be configured.
+INSTALL01038	-	Minimum value for transport port range cannot be the same as for port server port.
+INSTALL01039	-	Maximum value for transport port range cannot be the same as for port server port.
+INSTALL01040	-	Maximum value for transport port range must be higher than the minimum value.
+INSTALL01041	-	Port server port cannot be within transport port range.
+INSTALL01042	-	Invalid host address.
+INSTALL01043	-	Data directory already exists. Give another path.
+INSTALL01044	-	Directory {0} has insufficient rights.
+INSTALL01045	-	Unable to load data for database connection.
+INSTALL01046	-	User does not exist or some database connection information is incorrect.
+INSTALL01047	-	There is no configuration for the system in the database.
+INSTALL01048	-	Accepted value for node zero threshold is between 0 and 100.
+INSTALL01049	-	Alarm threshold cannot be a negative value. -1 is allowed, meaning no alarms.
+INSTALL01050	-	\nComptel EventLink database does not exist.
+INSTALL01051	-	Minimum value for transport port range must be within range from 1024 to 65534.
+INSTALL01052	-	Invalid host name, only characters, '_', and numbers are allowed.
+INSTALL01053	-	Invalid answer: {0}
+INSTALL01054	-	Importing Cleanup process stream failed. {0}
+INSTALL01055	-	Accepted value for execution log days is between 1 and 99.
+INSTALL01056	-	Online request server port cannot be within transport port range.
+INSTALL01057	-	Online request server port cannot be the same as for port server port.
+INSTALL01058	-	Accepted value for TRS warning threshold is between 0 and 99.
+
+INSTALLMSG000000	-	\n\n\nStarting the post-install configuration of Comptel EventLink. If you have \nalready configured Comptel EventLink on this host, and do not wish to \nreconfigure, please press Ctrl-C now to abort configuration.
+INSTALLMSG000002	-	\nAre you adding this host to an existing Comptel EventLink system? [{0}]:
+INSTALLMSG000003	-	\nSelect the database type to be used:
+INSTALLMSG000004	-	Select [{0}]:
+INSTALLMSG000005	-	\nEnter the database connection information. For database port, the suggested value is usually correct.
+INSTALLMSG000006	-	\nDatabase ID used when connecting [{0}]:
+INSTALLMSG000007	-	Host on which the database is running [{0}]:
+INSTALLMSG000008	-	Port number listened by the database [{0}]:
+INSTALLMSG000009	-	Password for the Oracle user 'system' for creating new user [{0}]:
+INSTALLMSG000010	-	\nTesting database connection...
+INSTALLMSG000011	-	Database connection successful.
+INSTALLMSG000012	-	\nDatabase user ID to be used [{0}]:
+INSTALLMSG000013	-	Database user password [{0}]:
+INSTALLMSG000014	-	\nChecking user...
+INSTALLMSG000015	-	\nDatabase settings:
+INSTALLMSG000016	-	Type    : {0}
+INSTALLMSG000017	-	ID      : {0}
+INSTALLMSG000018	-	Host    : {0}
+INSTALLMSG000019	-	Port    : {0}
+INSTALLMSG000020	-	User    : {0}
+INSTALLMSG000021	-	Password: {0}
+INSTALLMSG000022	-	\nDo you want to change these settings? [{0}]:
+INSTALLMSG000023	-	\nCreating the user {0}.
+INSTALLMSG000024	-	Creating the Comptel EventLink database elements.
+INSTALLMSG000025	-	See log file {0} for details.
+INSTALLMSG000026	-	\nDatabase successfully created.
+INSTALLMSG000027	-	PostgreSQL username for creating a new user:
+INSTALLMSG000028	-	Password for the user {0}:
+INSTALLMSG000029	-	\nComptel EventLink database successfully located.
+INSTALLMSG000030	-	\nDatabase user ID [{0}]:
+
+INSTALLMSG000101	-	\nFill in the following Comptel EventLink configuration parameters.
+INSTALLMSG000102	-	\nGlobal parameters:
+INSTALLMSG000103	-	\nSystem time zone selection
+INSTALLMSG000104	-	\nAll the log and audit trail data in Comptel EventLink is stored in GMT (UTC) time.
+INSTALLMSG000105	-	Select a system time zone, in which the user interface will show the log and audit trail data by default.\n
+INSTALLMSG000106	-	Choose a continent/area [{0}]:
+INSTALLMSG000107	-	Choose a location within the continent [{0}]:
+INSTALLMSG000108	-	\nMaximum number of node diagnostic messages to store within one file (numbers from 100 to 100000) [{0}]:
+INSTALLMSG000109	-	Number of node diagnostic files after which the oldest one is deleted (numbers from 1 to 999999) [{0}]:
+INSTALLMSG000110	-	Node zero threshold in megabytes (numbers from 0 to 100) [{0}]:
+INSTALLMSG000111	-	Comptel Alarm Dispatcher host [{0}]:
+INSTALLMSG000112	-	Comptel Alarm Dispatcher port [{0}]:
+INSTALLMSG000113	-	\nSystem time zone            : {0}
+INSTALLMSG000114	-	Diagnostic messages per file: {0}
+INSTALLMSG000115	-	Diagnostic files            : {0}
+INSTALLMSG000116	-	Node zero threshold         : {0}
+INSTALLMSG000117	-	Comptel Alarm Dispatcher host       : {0}
+INSTALLMSG000118	-	Comptel Alarm Dispatcher port       : {0}
+INSTALLMSG000119	-	Do you want to use Comptel Alarm Dispatcher? [{0}]:
+INSTALLMSG000120	-	Send also warnings? [{0}]:
+INSTALLMSG000121	-	Send warnings               : {0}
+INSTALLMSG000122	-	The number of days to keep data in the execution trace log (numbers from 1 to 99) [{0}]:
+INSTALLMSG000123	-	The number of days to keep data in the execution trace log : {0}
+INSTALLMSG000124	-	The warning threshold for Temporary Record Storage (percentage) [{0}]:
+INSTALLMSG000125	-	The warning threshold for Temporary Record Storage : {0}%
+
+INSTALLMSG000201	-	\nHost specific parameters:
+INSTALLMSG000202	-	\nThe address for the other hosts to use when reaching this host [{0}]:
+INSTALLMSG000203	-	Short name for this host for display purposes [{0}]:
+INSTALLMSG000204	-	Single port number for port distribution server requests (from 1024 to 65535) [{0}]:
+INSTALLMSG000205	-	\nRange of free TCP ports for the system to use when transferring data between hosts (from 1024 to 65535, port above not within the range)
+INSTALLMSG000206	-	Range start [{0}]:
+INSTALLMSG000207	-	Range end [{0}]:
+INSTALLMSG000208	-	\nEnter the Comptel EventLink internal buffering directory paths.
+INSTALLMSG000209	-	\nPlease keep in mind the following recommendations when entering them:\n
+INSTALLMSG000210	-	* The directories are for system use only and must not be changed in any way by a UNIX user.\n
+INSTALLMSG000211	-	* On a High Availability system, the directories must be on a disk that is moved with the HA package.\n
+INSTALLMSG000212	-	* There must be plenty of space (more than 1 GB) in the record data buffering directories in case of temporary problems with, for example, network connections.\n
+INSTALLMSG000213	-	* Having more than one data buffering directory on separate physical disk drives improves the performance of process streams.\n
+INSTALLMSG000214	-	* In a very busy Comptel EventLink system, the node control interface buffer directory must reside on a different physical disk than the record data buffering directories, otherwise the messages and audit trail information reported by nodes get delayed.\n
+INSTALLMSG000215	-	Also, in a busy system the database storage files must not be on the same disk as the buffering directories.\n
+INSTALLMSG000216	-	* The buffer directory node control interface must reside on a different disk partition than the data buffering directories.\n
+INSTALLMSG000217	-	Record data buffering directory path [{1}]:
+INSTALLMSG000218	-	The alarm threshold for this directory in megabytes (-1 means no alarms) [{0}]:
+INSTALLMSG000219	-	Directory does not exist. Do you want this script to create it? [{0}]:
+INSTALLMSG000220	-	Directory {0} successfully created.\n
+INSTALLMSG000221	-	\nThe buffer directory for the node control interface [{0}]:
+INSTALLMSG000222	-	\nNode internal storage directory [{0}]:
+INSTALLMSG000224	-	\nComptel EventLink host specific configuration:
+INSTALLMSG000225	-	Host name                      : {0}
+INSTALLMSG000226	-	Host address                   : {0}
+INSTALLMSG000227	-	DMS (distribution server) port : {0}
+INSTALLMSG000228	-	Transport port range           : {0}
+INSTALLMSG000229	-	Control root directory         : {0}
+INSTALLMSG000230	-	Node internal storage directory: {0}
+INSTALLMSG000231	-	\nRecord data directories:
+INSTALLMSG000232	-	\nSaving global Comptel EventLink configuration...
+INSTALLMSG000233	-	\nSaving Comptel EventLink host specific configuration...
+INSTALLMSG000234	-	\nConfiguration successfully saved.\n
+INSTALLMSG000235	-	\nRejected records offline storage path [{0}]:
+INSTALLMSG000236	-	Offline storage directory      : {0}
+INSTALLMSG000237	-	Importing Cleanup stream into system database...
+INSTALLMSG000238	-	Importing Cleanup stream failed. The stream can be imported manually with command:\n {0}
+INSTALLMSG000239	-	Starting Cleanup stream failed. Log in to EventLink UI to start the stream manually.
+INSTALLMSG000240	-	Single port number for Online request server (from 1024 to 65535) [{0}]:
+INSTALLMSG000241	-	Online request server port     : {0}
+

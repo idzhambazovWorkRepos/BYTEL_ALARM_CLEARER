@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f29181e9-5b6d-4ebb-9675-4f483fd7a054" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="minikube" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../sdk/el-javanode-sdk/bin/apache-maven-3.6.2" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2AO4mWV4435NiVIosiZsD2Fsvxr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ilkodzhambazov/Work/projects/bytel/alarm_clear_netact/streams/ALARM_HANDLER/VFTR_ALARM_CLEARER",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -U clean compile" />
+      <command value="mvn clean install" />
+      <command value="mvn clean" />
+      <command value="mvn clean compile" />
+      <command value="mvn clean package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.NodeApplicationTest.tmp (2)">
+    <configuration name="NodeApplicationTest.testParseSourceObj (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VFTR_ALARM_CLEARER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comptel.bytelalarmhandler.clearer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comptel.bytelalarmhandler.clearer" />
+      <option name="MAIN_CLASS_NAME" value="com.comptel.bytelalarmhandler.clearer.NodeApplicationTest" />
+      <option name="METHOD_NAME" value="testParseSourceObj" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeApplicationTest.testParseSourceObj" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VFTR_ALARM_CLEARER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comptel.vftralarmhandler.clearer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comptel.vftralarmhandler.clearer" />
+      <option name="MAIN_CLASS_NAME" value="com.comptel.vftralarmhandler.clearer.NodeApplicationTest" />
+      <option name="METHOD_NAME" value="testParseSourceObj" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeApplicationTest.testSentPostRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VFTR_ALARM_CLEARER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comptel.vftralarmhandler.clearer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comptel.vftralarmhandler.clearer" />
+      <option name="MAIN_CLASS_NAME" value="com.comptel.vftralarmhandler.clearer.NodeApplicationTest" />
+      <option name="METHOD_NAME" value="testSentPostRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeApplicationTest.tmp (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VFTR_ALARM_CLEARER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comptel.bytelalarmhandler.clearer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comptel.bytelalarmhandler.clearer" />
+      <option name="MAIN_CLASS_NAME" value="com.comptel.bytelalarmhandler.clearer.NodeApplicationTest" />
+      <option name="METHOD_NAME" value="tmp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeApplicationTest.tmp (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BYTEL_ALARM_CLEARER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comptel.bytelalarmhandler.clearer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comptel.bytelalarmhandler.clearer" />
+      <option name="MAIN_CLASS_NAME" value="com.comptel.bytelalarmhandler.clearer.NodeApplicationTest" />
+      <option name="METHOD_NAME" value="tmp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NodeApplicationTest.tmp (2)" />
+        <item itemvalue="JUnit.NodeApplicationTest.tmp (1)" />
+        <item itemvalue="JUnit.NodeApplicationTest.testParseSourceObj (1)" />
+        <item itemvalue="JUnit.NodeApplicationTest.testSentPostRequest" />
+        <item itemvalue="JUnit.NodeApplicationTest.testParseSourceObj" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f29181e9-5b6d-4ebb-9675-4f483fd7a054" name="Changes" comment="" />
+      <created>1654867456982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654867456982</updated>
+      <workItem from="1654867458238" duration="1970000" />
+      <workItem from="1654872875863" duration="27000" />
+      <workItem from="1655117197056" duration="18000" />
+      <workItem from="1655119185903" duration="3000" />
+      <workItem from="1655294437767" duration="20610000" />
+      <workItem from="1655458746675" duration="1149000" />
+      <workItem from="1655459909110" duration="12653000" />
+      <workItem from="1655484669199" duration="560000" />
+      <workItem from="1655486210503" duration="18924000" />
+      <workItem from="1655561045752" duration="4777000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../../.." />
+    </ignored-roots>
+  </component>
+  <component name="hg4idea.settings">
+    <option name="RECENT_HG_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+</project>

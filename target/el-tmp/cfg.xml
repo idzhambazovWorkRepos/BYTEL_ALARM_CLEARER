@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration elversion="6.1">
+    <name>BYTEL_ALARM_CLEARER</name>
+    <version defect="0" major="1"
+             minor="0" patch="BUILD22" />
+    <description>ByTel Alarm Clearer JavaNode</description>
+    <type>
+        <collector>false</collector>
+        <intermediate>false</intermediate>
+        <decoder>false</decoder>
+        <businesslogic>true</businesslogic>
+        <blt>false</blt>
+        <encoder>false</encoder>
+        <distributor>false</distributor>
+        <standalone>false</standalone>
+        <interface>false</interface>
+    </type>
+    <nodebase>java_node</nodebase>
+    <attributes>
+        <application_commit>false</application_commit>
+        <schedulable>true</schedulable>
+        <realtime>false</realtime>
+    </attributes>
+    <scalability>
+        <free />
+    </scalability>
+    <libraries>
+        <library exactversion="false" min_major="1" min_minor="0" min_defect="0" name="MCP_LIB_JAVANODE" />
+    </libraries>
+    <parameters>
+        <parameter name="ApplicationClass">
+            <value>com.comptel.bytelalarmhandler.clearer.NodeApplication</value>
+            <description>Node application class</description>
+            <check_regexp pattern="" />
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>true</hidden>
+            </attributes>
+        </parameter>
+
+        <parameter name="CLASSPATH">
+            <value>/opt/comptel/tomcat/eventlink/lib/c3p0.jar:/opt/comptel/tomcat/eventlink/lib/postgresql-jdbc.jar</value>
+            <description>Classpath to database provider specific JDBC driver (e.g. classes15.jar for TimesTen or SolidDriver2.0.jar for SolidDB.)</description>
+            <check_regexp pattern="" />
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+        
+        <parameter name="ELJDBC.Driver">
+            <value>org.postgresql.Driver</value>
+            <description></description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+
+        <parameter name="ELJDBC.URL">
+            <value>jdbc:postgresql://host:port/database</value>
+            <description></description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+
+        <parameter name="ELJDBC.User">
+            <value>elink</value>
+            <description>DB connection user name</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+        
+        <parameter name="ELJDBC.Password">
+            <value>password</value>
+            <description>DB connection password</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <password />
+            </value_type>
+            <attributes>
+                <mandatory>false</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+         <parameter name="CalmHost">
+            <value></value>
+            <description>Hostname for the Alam Management of Nokia Mediation</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+        
+        <parameter name="CalmRestApiPort">
+            <value>8182</value>
+            <description>Nokia Mediation Alarm Management Rest API port. Default is 8182</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <numeric />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+
+        <parameter name="sleepPerAlarmInMs">
+            <value>500</value>
+            <description>Sleep duration in ms between sending clear alarms to EventManager</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any />
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>false</hidden>
+            </attributes>
+        </parameter>
+
+        <parameter name="JavaOptions">
+            <value>-XX:+UseSerialGC</value>
+            <description>Java options</description>
+            <check_regexp pattern=""/>
+            <value_type>
+                <any/>
+            </value_type>
+            <attributes>
+                <mandatory>true</mandatory>
+                <installation_specific>false</installation_specific>
+                <environment>false</environment>
+                <hidden>true</hidden>
+            </attributes>
+        </parameter>
+    </parameters>
+    <messages>
+        <message key="GREETING001" type="I">
+            <text>Example info message</text>
+            <explanation>Explanation of the info message</explanation>
+        </message>
+        <message key="GREETING002" type="W">
+            <text>Example warning message</text>
+            <explanation>Explanation of the warning message</explanation>
+        </message>
+        <message key="GREETING003" type="E">
+            <text>Example error message</text>
+            <explanation>Explanation of the error message</explanation>
+        </message>
+    </messages>
+	     
+    <docs>
+        <file name="../classes/docs/index.html"/>
+    </docs>
+    <files>
+        <file editable="false" name="../app_AdapterNode.jar" os="AnyOS" path="./">
+            <export>
+                <libpath>false</libpath>
+                <perl5lib>false</perl5lib>
+            </export>
+        </file>
+    </files>
+</configuration>

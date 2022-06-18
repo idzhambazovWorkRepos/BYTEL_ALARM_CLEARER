@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by XMLSPY 2005 Professional Ed., Installed for 5 users (Comptel Oyj) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="configuration">
+		<xs:annotation>
+			<xs:documentation>Root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="50"/>
+							<xs:minLength value="1"/>
+							<xs:pattern value="[\w _\-]+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="version">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="major" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:positiveInteger">
+											<xs:totalDigits value="3"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="minor" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:nonNegativeInteger">
+											<xs:totalDigits value="3"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="defect" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:nonNegativeInteger">
+											<xs:totalDigits value="3"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="patch">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="1000"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="description" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="2000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="type" minOccurs="0">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="collector" type="xs:boolean"/>
+							<xs:element name="intermediate" type="xs:boolean"/>
+							<xs:element name="decoder" type="xs:boolean"/>
+							<xs:element name="businesslogic" type="xs:boolean"/>
+							<xs:element name="blt" type="xs:boolean"/>
+							<xs:element name="encoder" type="xs:boolean"/>
+							<xs:element name="distributor" type="xs:boolean"/>
+							<xs:element name="standalone" type="xs:boolean"/>
+							<xs:element name="interface" type="xs:boolean" minOccurs="0"/>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="application" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="name" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="50"/>
+									<xs:pattern value="[\w _\-]+"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="min_major" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:positiveInteger">
+									<xs:totalDigits value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="min_minor" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:totalDigits value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="min_defect" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="exactversion" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="nodebase" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="c_node"/>
+							<xs:enumeration value="perl_node"/>
+							<xs:enumeration value="java_node"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="application_commit" type="xs:boolean"/>
+							<xs:element name="schedulable" type="xs:boolean"/>
+							<xs:element name="realtime" type="xs:boolean"/>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="scalability" minOccurs="0">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="free" type="xs:string"/>
+							<xs:element name="none" type="xs:string"/>
+							<xs:element name="split">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="element" type="xs:string" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="parameters" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="value" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2000"/>
+													<xs:minLength value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="description" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2000"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="value_type">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="any">
+														<xs:complexType>
+															<xs:attribute name="min_length" use="optional">
+																<xs:simpleType>
+																	<xs:restriction base="xs:nonNegativeInteger"/>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="max_length" use="optional">
+																<xs:simpleType>
+																	<xs:restriction base="xs:nonNegativeInteger"/>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="numeric">
+														<xs:complexType>
+															<xs:attribute name="min_value" type="xs:integer" use="optional"/>
+															<xs:attribute name="max_value" type="xs:integer" use="optional"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="list">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="element" type="xs:string" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="password"/>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="check_regexp" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="pattern" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="1000"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dependency" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="parameter" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="50"/>
+															<xs:pattern value="[\w_\-\.]+"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="values" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="300"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="attributes">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="mandatory" type="xs:boolean" default="false"/>
+													<xs:element name="hidden" type="xs:boolean" default="false"/>
+													<xs:element name="environment" type="xs:boolean" default="false"/>
+													<xs:element name="installation_specific" type="xs:boolean" default="false"/>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="name" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+												<xs:minLength value="1"/>
+												<xs:pattern value="[\w_\-\.]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="files" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="file" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="export" minOccurs="0">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="libpath" type="xs:boolean" default="false"/>
+													<xs:element name="perl5lib" type="xs:boolean" default="false"/>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="os" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="AnyOS"/>
+												<xs:enumeration value="SunOS"/>
+												<xs:enumeration value="HP-UX"/>
+												<xs:enumeration value="AIX"/>
+												<xs:enumeration value="OSF1"/>
+												<xs:enumeration value="Linux"/>
+												<xs:enumeration value="HP-UXita"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="path">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="200"/>
+												<xs:pattern value="[^/].*"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="editable" type="xs:boolean" default="false"/>
+									<xs:attribute name="name">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="200"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="messages" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="message" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="text">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2000"/>
+													<xs:minLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="explanation" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2000"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="key" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="20"/>
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="type" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="I"/>
+												<xs:enumeration value="W"/>
+												<xs:enumeration value="E"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="docs" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="file" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="libraries" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="library" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="50"/>
+												<xs:pattern value="[\w_]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="min_major" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:positiveInteger">
+												<xs:totalDigits value="3"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="min_minor" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:nonNegativeInteger">
+												<xs:totalDigits value="3"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="min_defect" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:nonNegativeInteger">
+												<xs:totalDigits value="3"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="exactversion" type="xs:boolean" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="storages" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="storage" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="description">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2000"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="name" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="20"/>
+												<xs:pattern value="[\w_\-]+"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="links" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="link" minOccurs="0" maxOccurs="unbounded">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="20"/>
+										<xs:minLength value="1"/>
+										<xs:pattern value="[A-Za-z0-9_\-]+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="auditkeys" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="auditkey" minOccurs="0" maxOccurs="unbounded">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="20"/>
+										<xs:pattern value="[\w_]+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="elversion" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="5.2"/>
+						<xs:enumeration value="5.3"/>
+						<xs:enumeration value="6.0"/>
+						<xs:enumeration value="6.1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.comptel.bytelalarmhandler.clearer.NodeApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in com.comptel.bytelalarmhandler.clearer.NodeApplicationTest

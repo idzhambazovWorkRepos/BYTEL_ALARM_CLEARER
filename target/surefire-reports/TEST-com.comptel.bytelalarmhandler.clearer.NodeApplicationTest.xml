@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.comptel.bytelalarmhandler.clearer.NodeApplicationTest" time="0.022" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="idea.version" value="2022.1.2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.15.1+2-LTS"/>
+    <property name="sun.boot.library.path" value="/Users/ilkodzhambazov/Library/Java/JavaVirtualMachines/liberica-11.0.15.1/lib"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/ilkodzhambazov/Work/projects/bytel/alarm_clear_netact/streams/ALARM_HANDLER/VFTR_ALARM_CLEARER"/>
+    <property name="java.vm.vendor" value="BellSoft"/>
+    <property name="java.vendor.url" value="https://bell-sw.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="BG"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/ilkodzhambazov/Work/projects/bytel/alarm_clear_netact/streams/ALARM_HANDLER/VFTR_ALARM_CLEARER"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.15.1+2-LTS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.io.tmpdir" value="/var/folders/wl/bk8swmmj7rzfp4bjvxy9hdrc0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="maven.ext.class.path" value="/Users/ilkodzhambazov/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.5787.30/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="/Users/ilkodzhambazov/Work/sdk/el-javanode-sdk/bin/apache-maven-3.6.2/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/ilkodzhambazov/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/Users/ilkodzhambazov/Work/sdk/el-javanode-sdk/bin/apache-maven-3.6.2/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value="/Users/ilkodzhambazov/.m2/repository"/>
+    <property name="os.version" value="12.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/ilkodzhambazov"/>
+    <property name="user.timezone" value="Europe/Sofia"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="ilkodzhambazov"/>
+    <property name="java.class.path" value="/Users/ilkodzhambazov/Work/sdk/el-javanode-sdk/bin/apache-maven-3.6.2/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.1.2 -s /Users/ilkodzhambazov/.m2/settings.xml -Dmaven.repo.local=/Users/ilkodzhambazov/.m2/repository clean package"/>
+    <property name="java.home" value="/Users/ilkodzhambazov/Library/Java/JavaVirtualMachines/liberica-11.0.15.1"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.15.1"/>
+    <property name="java.vendor" value="BellSoft"/>
+    <property name="maven.home" value="/Users/ilkodzhambazov/Work/sdk/el-javanode-sdk/bin/apache-maven-3.6.2"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2022-04-22"/>
+    <property name="java.vendor.url.bug" value="https://bell-sw.com/support"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="tmp" classname="com.comptel.bytelalarmhandler.clearer.NodeApplicationTest" time="0.022"/>
+</testsuite>
