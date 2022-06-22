@@ -98,39 +98,24 @@ public class NodeApplication implements BusinessLogic, Schedulable {
         int count = 0;
         long eventId = 0l;
         List<Alarm> notClearedAlarmEventsList = _restClient.getAllActiveAlarms();
-        if (notClearedAlarmEventsList.isEmpty()) {ß
+        if (notClearedAlarmEventsList.isEmpty()) {
             logger.info("No more uncleared alarm in EM db for this schedule, nothing to do");
         } else {
             for (Alarm alarm : notClearedAlarmEventsList) {
                 logger.info("alarm:" + alarm.alarmCode);
-                //List<ELEvent> eventList = dbServiceEL.selectAllFromEL();
                 ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
-               // logger.info("List size: " + eventList.size());
+                logger.info("ACKUSER:[" + elEvent.getAckuser() + "]");
                 eventId = Long.parseLong(alarm.id);
-                if (elEvent.getAckuser().isEmpty()){
+                if (elEvent.getAckuser() == null){
                     logger.fine(String.format("ELEventId:%s has not been acknowledged yet", elEvent.getAdditionalId()));
                 }else{
                     _restClient.clearAlarm(elEvent.getAckuser(), eventId);
                     count++;
                     logger.info(String.format("Clear is sent for ELEventId:%s EMEventId:%s",
-                            elEvent.getAdditionalId(), startId));
+                            elEvent.getAdditionalId(), eventId));
                     Thread.sleep(sleepPerAlarmInMs);
                 }
 
-
-
-//                for (ELEvent event : eventList){
-//                    if (event.getAckuser().isEmpty()) {
-//                        logger.fine(String.format("ELEventId:%s has not been acknowledged yet",
-//                                event.getAdditionalId()));
-//                    } else {
-//                        _restClient.clearAlarm(event.getAckuser(), startId);
-//                        count++;
-//                        logger.info(String.format("Clear is sent for ELEventId:%s EMEventId:%s",
-//                                event.getAdditionalId(), startId));
-//                        Thread.sleep(sleepPerAlarmInMs);
-//                    }
-//                }
             }
 
             if (count > 0) {
