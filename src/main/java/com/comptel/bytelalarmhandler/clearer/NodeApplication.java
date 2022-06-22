@@ -65,7 +65,8 @@ public class NodeApplication implements BusinessLogic, Schedulable {
 
                 @Override
                 public Object call() throws Exception {
-                    organizeFetchAndClearAlarms();
+                    //organizeFetchAndClearAlarms();
+                    fetchAndClearAlarms();
                     return "this return is not used by any method";
                 }
             };
@@ -76,33 +77,34 @@ public class NodeApplication implements BusinessLogic, Schedulable {
         }
     }
 
-    private void organizeFetchAndClearAlarms() throws Exception {
-        logger.info("organizeFetchAndClearAlarms(): enter");
-        try {
-            List<Alarm> notClearedAlarmList = fetchAndClearAlarms();
-            while (!notClearedAlarmList.isEmpty()) {
-                notClearedAlarmList = fetchAndClearAlarms();
-            }
-        } catch (Exception e) {
-            logger.severe(String.format("An exception caught in organizeFetchAndClearAlarms(). "
-                                        + "Node will continue where it left off within next schedule time. "
-                                        + "The exception message is:\n%s", e.getMessage()));
-            throw e;
-        } finally {
-            isStillClearingAlarms.set(false);
-        }
-        logger.info("organizeFetchAndClearAlarms(): exit");
-    }
-    private List<Alarm> fetchAndClearAlarms() throws NumberFormatException, SQLException, InterruptedException, IOException {
+//    private void organizeFetchAndClearAlarms() throws Exception {
+//        logger.info("organizeFetchAndClearAlarms(): enter");
+//        try {
+//            List<Alarm> notClearedAlarmList = fetchAndClearAlarms();
+//            while (!notClearedAlarmList.isEmpty()) {
+//                notClearedAlarmList = fetchAndClearAlarms();
+//            }
+//        } catch (Exception e) {
+//            logger.severe(String.format("An exception caught in organizeFetchAndClearAlarms(). "
+//                                        + "Node will continue where it left off within next schedule time. "
+//                                        + "The exception message is:\n%s", e.getMessage()));
+//            throw e;
+//        } finally {
+//            isStillClearingAlarms.set(false);
+//        }
+//        logger.info("organizeFetchAndClearAlarms(): exit");
+//    }
+    private void fetchAndClearAlarms() throws NumberFormatException, SQLException, InterruptedException, IOException {
         logger.info("fetchAndClearAlarms(): enter");
         int count = 0;
         long eventId = 0l;
         List<Alarm> notClearedAlarmEventsList = _restClient.getAllActiveAlarms();
+
         if (notClearedAlarmEventsList.isEmpty()) {
             logger.info("No more uncleared alarm in EM db for this schedule, nothing to do");
         } else {
             for (Alarm alarm : notClearedAlarmEventsList) {
-                logger.info("alarm:" + alarm.alarmCode);
+                logger.info("alarm :" + alarm.alarmCode);
                 ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
                 logger.info("ACKUSER:[" + elEvent.getAckuser() + "]");
                 eventId = Long.parseLong(alarm.id);
@@ -124,10 +126,12 @@ public class NodeApplication implements BusinessLogic, Schedulable {
             } else {
                 logger.fine(String.format("0 clear alarms sent to EM. %d alarms in EM checked "
                                           + "for being acknowledged", notClearedAlarmEventsList.size()));
+
             }
+
+            isStillClearingAlarms.set(false);
         }
         logger.info("fetchAndClearAlarms(): exit");
-        return notClearedAlarmEventsList;
 
     }
 
