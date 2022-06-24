@@ -104,7 +104,7 @@ public class NodeApplication implements BusinessLogic, Schedulable {
             logger.info("No more uncleared alarm in EM db for this schedule, nothing to do");
         } else {
             for (Alarm alarm : notClearedAlarmEventsList) {
-                logger.info("alarm :" + alarm.alarmCode);
+                logger.info("alarm id :" + alarm.text);
                 ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
                 logger.info("ACKUSER:[" + elEvent.getAckuser() + "]");
                 eventId = Long.parseLong(alarm.id);
@@ -129,8 +129,8 @@ public class NodeApplication implements BusinessLogic, Schedulable {
 
             }
 
-            isStillClearingAlarms.set(false);
         }
+        isStillClearingAlarms.set(false);
         logger.info("fetchAndClearAlarms(): exit");
 
     }

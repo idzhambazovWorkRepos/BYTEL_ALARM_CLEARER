@@ -57,7 +57,7 @@ public class CalmRestClient {
      * @throws IOException
      */
     public List<Alarm> getAllActiveAlarms() throws IOException {
-        LOGGER.info("fetchAndClearAlarms(): enter");
+        LOGGER.info("getAllActiveAlarms(): enter");
         return transformNonFilteredJsonResponse(sendRestGetRequest(GET_ALL_ACTIVE_ALARMS));
 
     }
