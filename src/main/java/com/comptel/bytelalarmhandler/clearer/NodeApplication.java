@@ -97,7 +97,8 @@ public class NodeApplication implements BusinessLogic, Schedulable {
     private void fetchAndClearAlarms() throws NumberFormatException, SQLException, InterruptedException, IOException {
         logger.info("fetchAndClearAlarms(): enter");
         int count = 0;
-        long eventId = 0l;
+        long alarmId = 0l;
+        long evetnId = 0l;
         List<Alarm> notClearedAlarmEventsList = _restClient.getAllActiveAlarms();
 
         if (notClearedAlarmEventsList.isEmpty()) {
@@ -105,17 +106,23 @@ public class NodeApplication implements BusinessLogic, Schedulable {
         } else {
             for (Alarm alarm : notClearedAlarmEventsList) {
                 logger.info("alarm id :" + alarm.text);
-                ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
+                evetnId = parseEventIdFromSourceObject(alarm.sourceObject);
+                if (evetnId != 0) {
+                    ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
+
                 logger.info("ACKUSER:[" + elEvent.getAckuser() + "]");
-                eventId = Long.parseLong(alarm.id);
-                if (elEvent.getAckuser() == null){
+                alarmId = Long.parseLong(alarm.id);
+                if (elEvent.getAckuser() == null) {
                     logger.fine(String.format("ELEventId:%s has not been acknowledged yet", elEvent.getAdditionalId()));
-                }else{
-                    _restClient.clearAlarm(elEvent.getAckuser(), eventId);
+                } else {
+                    _restClient.clearAlarm(elEvent.getAckuser(), alarmId);
                     count++;
                     logger.info(String.format("Clear is sent for ELEventId:%s EMEventId:%s",
-                            elEvent.getAdditionalId(), eventId));
+                            elEvent.getAdditionalId(), alarmId));
                     Thread.sleep(sleepPerAlarmInMs);
+                }
+            }else{
+                    logger.fine(String.format("Alarm cannot be sent to EM. Missing EventId"));
                 }
 
             }
@@ -152,12 +159,15 @@ public class NodeApplication implements BusinessLogic, Schedulable {
 
         if (splittedProcess.length != 0) {
             String eventIdGroup = splittedProcess[splittedProcess.length - 1];
-            eventId = eventIdGroup.substring(eventIdGroup.indexOf(":") + 1);
-            logger.info("parseEventIdFromSourceObject(): EventId = " + eventId);
+            if (eventIdGroup.contains(":")){
+                eventId = eventIdGroup.substring(eventIdGroup.indexOf(":") + 1);
+                logger.info("parseEventIdFromSourceObject(): EventId = " + eventId);
+            }
         }
 
         logger.info("parseEventIdFromSourceObject(): end");
         if (eventId.isEmpty()) {
+            logger.info("Wrong SourceObject format. EventId is missing!");
             return 0L;
         }
 
