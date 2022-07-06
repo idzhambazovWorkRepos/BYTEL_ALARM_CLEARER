@@ -8,11 +8,11 @@
         <collector>false</collector>
         <intermediate>false</intermediate>
         <decoder>false</decoder>
-        <businesslogic>true</businesslogic>
+        <businesslogic>false</businesslogic>
         <blt>false</blt>
         <encoder>false</encoder>
         <distributor>false</distributor>
-        <standalone>false</standalone>
+        <standalone>true</standalone>
         <interface>false</interface>
     </type>
     <nodebase>java_node</nodebase>
