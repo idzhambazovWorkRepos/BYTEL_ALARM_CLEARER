@@ -12,7 +12,6 @@ import com.google.gson.reflect.TypeToken;
 import com.nokia.calm.model.Alarm;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
@@ -58,7 +57,7 @@ public class CalmRestClient {
      * @throws IOException
      */
     public List<Alarm> getAllActiveAlarms() throws IOException {
-        LOGGER.info("fetchAndClearAlarms(): enter");
+        LOGGER.info("getAllActiveAlarms(): enter");
         return transformNonFilteredJsonResponse(sendRestGetRequest(GET_ALL_ACTIVE_ALARMS));
 
     }

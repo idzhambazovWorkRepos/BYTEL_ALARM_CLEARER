@@ -8,11 +8,11 @@
         <collector>false</collector>
         <intermediate>false</intermediate>
         <decoder>false</decoder>
-        <businesslogic>true</businesslogic>
+        <businesslogic>false</businesslogic>
         <blt>false</blt>
         <encoder>false</encoder>
         <distributor>false</distributor>
-        <standalone>false</standalone>
+        <standalone>true</standalone>
         <interface>false</interface>
     </type>
     <nodebase>java_node</nodebase>
@@ -40,21 +40,6 @@
                 <installation_specific>false</installation_specific>
                 <environment>false</environment>
                 <hidden>true</hidden>
-            </attributes>
-        </parameter>
-
-        <parameter name="CLASSPATH">
-            <value>/opt/comptel/tomcat/eventlink/lib/c3p0.jar:/opt/comptel/tomcat/eventlink/lib/postgresql-jdbc.jar</value>
-            <description>Classpath to database provider specific JDBC driver (e.g. classes15.jar for TimesTen or SolidDriver2.0.jar for SolidDB.)</description>
-            <check_regexp pattern="" />
-            <value_type>
-                <any />
-            </value_type>
-            <attributes>
-                <mandatory>true</mandatory>
-                <installation_specific>false</installation_specific>
-                <environment>false</environment>
-                <hidden>false</hidden>
             </attributes>
         </parameter>
         
