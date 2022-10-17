@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration elversion="6.1">
-    <name>BYTEL_ALARM_CLEARER</name>
+    <name>BY_CFG_ALARM_CLEARER</name>
     <version defect="${version.defect}" major="${version.major}"
              minor="${version.minor}" patch="${version.patch}" />
-    <description>ByTel Alarm Clearer JavaNode</description>
+    <description>Bouygues Alarm Clearer JavaNode</description>
     <type>
         <collector>false</collector>
         <intermediate>false</intermediate>
         <decoder>false</decoder>
-        <businesslogic>false</businesslogic>
+        <businesslogic>true</businesslogic>
         <blt>false</blt>
         <encoder>false</encoder>
         <distributor>false</distributor>
-        <standalone>true</standalone>
+        <standalone>false</standalone>
         <interface>false</interface>
     </type>
     <nodebase>java_node</nodebase>
