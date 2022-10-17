@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration elversion="6.1">
-    <name>BYTEL_ALARM_CLEARER</name>
+    <name>BY_CFG_ALARM_CLEARER</name>
     <version defect="${version.defect}" major="${version.major}"
              minor="${version.minor}" patch="${version.patch}" />
-    <description>ByTel Alarm Clearer JavaNode</description>
+    <description>Bouygues Alarm Clearer JavaNode</description>
     <type>
         <collector>false</collector>
         <intermediate>false</intermediate>
@@ -40,21 +40,6 @@
                 <installation_specific>false</installation_specific>
                 <environment>false</environment>
                 <hidden>true</hidden>
-            </attributes>
-        </parameter>
-
-        <parameter name="CLASSPATH">
-            <value>/opt/comptel/tomcat/eventlink/lib/c3p0.jar:/opt/comptel/tomcat/eventlink/lib/postgresql-jdbc.jar</value>
-            <description>Classpath to database provider specific JDBC driver (e.g. classes15.jar for TimesTen or SolidDriver2.0.jar for SolidDB.)</description>
-            <check_regexp pattern="" />
-            <value_type>
-                <any />
-            </value_type>
-            <attributes>
-                <mandatory>true</mandatory>
-                <installation_specific>false</installation_specific>
-                <environment>false</environment>
-                <hidden>false</hidden>
             </attributes>
         </parameter>
         

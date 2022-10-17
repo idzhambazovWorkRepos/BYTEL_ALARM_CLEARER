@@ -4,17 +4,18 @@ import com.comptel.database.DBConnectionParams;
 import com.comptel.database.DBService;
 import com.comptel.database.ELEvent;
 
+import com.comptel.eventlink.core.Nodebase;
 import com.comptel.mc.node.*;
 import com.nokia.calm.model.Alarm;
 import com.nokia.calm.rest.CalmRestClient;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
+
+import static com.comptel.eventlink.core.Nodebase.*;
 
 public class NodeApplication implements BusinessLogic, Schedulable {
 
@@ -61,76 +62,84 @@ public class NodeApplication implements BusinessLogic, Schedulable {
     public void schedule() throws Exception {
         if (isStillClearingAlarms.compareAndSet(false, true)) {
             logger.info("Schedule starts sending clear alarms ");
-            Callable callable = new Callable() {
-
-                @Override
-                public Object call() throws Exception {
-                    organizeFetchAndClearAlarms();
-                    return "this return is not used by any method";
-                }
+            Callable callable = () -> {
+                //organizeFetchAndClearAlarms();
+                fetchAndClearAlarms();
+                return "this return is not used by any method";
             };
-            executorService.submit(callable);
+
+            final Future future = executorService.submit(callable);
+
+            try {
+                future.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                logger.severe("InterruptedException: " + e.getCause());
+                nb_abort();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+                logger.severe("ExecutionException: " + e.getMessage());
+                nb_abort();
+            }catch (CancellationException e){
+                e.printStackTrace();
+                logger.severe("CancellationException: " + e.getMessage());
+                nb_abort();
+            }
 
         } else {
             logger.info("Schedule skipped as node is still busy sending clear alarms ");
         }
+
     }
 
-    private void organizeFetchAndClearAlarms() throws Exception {
-        logger.info("organizeFetchAndClearAlarms(): enter");
-        try {
-            List<Alarm> notClearedAlarmList = fetchAndClearAlarms();
-            while (!notClearedAlarmList.isEmpty()) {
-                notClearedAlarmList = fetchAndClearAlarms();
-            }
-        } catch (Exception e) {
-            logger.severe(String.format("An exception caught in organizeFetchAndClearAlarms(). "
-                                        + "Node will continue where it left off within next schedule time. "
-                                        + "The exception message is:\n%s", e.getMessage()));
-            throw e;
-        } finally {
-            isStillClearingAlarms.set(false);
-        }
-        logger.info("organizeFetchAndClearAlarms(): exit");
-    }
-    private List<Alarm> fetchAndClearAlarms() throws NumberFormatException, SQLException, InterruptedException, IOException {
+//    private void organizeFetchAndClearAlarms() throws Exception {
+//        logger.info("organizeFetchAndClearAlarms(): enter");
+//        try {
+//            List<Alarm> notClearedAlarmList = fetchAndClearAlarms();
+//            while (!notClearedAlarmList.isEmpty()) {
+//                notClearedAlarmList = fetchAndClearAlarms();
+//            }
+//        } catch (Exception e) {
+//            logger.severe(String.format("An exception caught in organizeFetchAndClearAlarms(). "
+//                                        + "Node will continue where it left off within next schedule time. "
+//                                        + "The exception message is:\n%s", e.getMessage()));
+//            throw e;
+//        } finally {
+//            isStillClearingAlarms.set(false);
+//        }
+//        logger.info("organizeFetchAndClearAlarms(): exit");
+//    }
+    private void fetchAndClearAlarms() throws NumberFormatException, SQLException, InterruptedException, IOException {
         logger.info("fetchAndClearAlarms(): enter");
         int count = 0;
-        long eventId = 0l;
+        long alarmId = 0l;
+        long evetnId = 0l;
         List<Alarm> notClearedAlarmEventsList = _restClient.getAllActiveAlarms();
-        if (notClearedAlarmEventsList.isEmpty()) {ß
+
+        if (notClearedAlarmEventsList.isEmpty()) {
             logger.info("No more uncleared alarm in EM db for this schedule, nothing to do");
         } else {
             for (Alarm alarm : notClearedAlarmEventsList) {
-                logger.info("alarm:" + alarm.alarmCode);
-                //List<ELEvent> eventList = dbServiceEL.selectAllFromEL();
-                ELEvent elEvent = dbServiceEL.selectByEventidFromEL(parseEventIdFromSourceObject(alarm.sourceObject));
-               // logger.info("List size: " + eventList.size());
-                eventId = Long.parseLong(alarm.id);
-                if (elEvent.getAckuser().isEmpty()){
+                logger.info("alarm id:" + alarm.getId());
+                evetnId = parseEventIdFromSourceObject(alarm.sourceObject);
+                if (evetnId != 0) {
+                    ELEvent elEvent = dbServiceEL.selectByEventidFromEL(evetnId);
+
+                logger.info("AcknowledgedBy:[" + elEvent.getAckuser() + "]");
+                alarmId = Long.parseLong(alarm.id);
+                if (elEvent.getAckuser() == null) {
                     logger.fine(String.format("ELEventId:%s has not been acknowledged yet", elEvent.getAdditionalId()));
-                }else{
-                    _restClient.clearAlarm(elEvent.getAckuser(), eventId);
+                } else {
+                    _restClient.clearAlarm(elEvent.getAckuser(), alarmId);
                     count++;
                     logger.info(String.format("Clear is sent for ELEventId:%s EMEventId:%s",
-                            elEvent.getAdditionalId(), startId));
+                            elEvent.getAdditionalId(), alarmId));
                     Thread.sleep(sleepPerAlarmInMs);
                 }
+            }else{
+                    logger.fine(String.format("Alarm cannot be sent to EM. Missing EventId"));
+                }
 
-
-
-//                for (ELEvent event : eventList){
-//                    if (event.getAckuser().isEmpty()) {
-//                        logger.fine(String.format("ELEventId:%s has not been acknowledged yet",
-//                                event.getAdditionalId()));
-//                    } else {
-//                        _restClient.clearAlarm(event.getAckuser(), startId);
-//                        count++;
-//                        logger.info(String.format("Clear is sent for ELEventId:%s EMEventId:%s",
-//                                event.getAdditionalId(), startId));
-//                        Thread.sleep(sleepPerAlarmInMs);
-//                    }
-//                }
             }
 
             if (count > 0) {
@@ -139,38 +148,46 @@ public class NodeApplication implements BusinessLogic, Schedulable {
             } else {
                 logger.fine(String.format("0 clear alarms sent to EM. %d alarms in EM checked "
                                           + "for being acknowledged", notClearedAlarmEventsList.size()));
+
             }
+
         }
+        isStillClearingAlarms.set(false);
         logger.info("fetchAndClearAlarms(): exit");
-        return notClearedAlarmEventsList;
 
     }
 
     public long parseEventIdFromSourceObject(String sourceObject) {
 
         logger.info("parseEventIdFromSourceObject(): start");
-        String eventId = "";
+        String eventId = null;
 
-        //process-StreamName:TEST_ALARM2-NodeName:ALARMGENERATOR_BLN3-UDPCOLLECTOR013
         if (sourceObject.isEmpty()) {
+            logger.info("SourceObject not present");
             return 0L;
         }
 
-        String process = sourceObject.substring(sourceObject.lastIndexOf("/process-"));
-        logger.info("parseEventIdFromSourceObject(): process = " + process);
+        if (sourceObject.contains("/process-") && sourceObject.matches("(.*)EventId:(\\d+)")){
+            String process = sourceObject.substring(sourceObject.lastIndexOf("/process-"));
+            logger.info("parseEventIdFromSourceObject(): process = " + process);
 
-        String[] splittedProcess = process.split("-");
+            String[] splittedProcess = process.split("-");
 
-        if (splittedProcess.length != 0) {
-            String eventIdGroup = splittedProcess[splittedProcess.length - 1];
-            eventId = eventIdGroup.substring(eventIdGroup.indexOf(":") + 1);
-            logger.info("parseEventIdFromSourceObject(): EventId = " + eventId);
+            if (splittedProcess.length != 0) {
+                String eventIdGroup = splittedProcess[splittedProcess.length - 1];
+                eventId = eventIdGroup.substring(eventIdGroup.indexOf(":") + 1).trim();
+                logger.info("parseEventIdFromSourceObject(): EventId = " + eventId);
+            }
+        }else{
+            logger.info("Wrong SourceObject format provided: " + sourceObject + " Skip to next alarm.");
+            return  0L;
+        }
+
+        if (eventId == null){
+            return 0L;
         }
 
         logger.info("parseEventIdFromSourceObject(): end");
-        if (eventId.isEmpty()) {
-            return 0L;
-        }
 
         return Long.parseLong(eventId);
     }
